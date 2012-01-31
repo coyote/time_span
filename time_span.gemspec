@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = TimeSpan::VERSION
   s.authors     = ["Craig A. Cook"]
   s.email       = ["craig.a.cook@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/coyote/time_span"
   s.summary     = %q{Time Span}
   s.description = %q{Time spans, including many comparators}
   s.license     = 'MIT'
