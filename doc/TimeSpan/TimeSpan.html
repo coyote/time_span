@@ -67,6 +67,8 @@
           
           <li><a href="#method-c-new">::new</a></li>
           
+          <li><a href="#method-i-21-3D">#!=</a></li>
+          
           <li><a href="#method-i-3C">#<</a></li>
           
           <li><a href="#method-i-3D-3D">#==</a></li>
@@ -149,6 +151,8 @@
           <li><a href="../TimeSpan.html">TimeSpan</a></li>
         
           <li><a href="../TimeSpan/RelativeTime.html">TimeSpan::RelativeTime</a></li>
+        
+          <li><a href="../TimeSpan/TimeLine.html">TimeSpan::TimeLine</a></li>
         
           <li><a href="../TimeSpan/TimeSpan.html">TimeSpan::TimeSpan</a></li>
         
@@ -247,6 +251,7 @@
 <pre>
 <span class="ruby-comment"># File lib/time_span.rb, line 13</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">starting_at</span>, <span class="ruby-identifier">ending_at</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Cannot make a span unless both points are on the same timeline&quot;</span> <span class="ruby-keyword">unless</span>  <span class="ruby-identifier">starting_at</span>.<span class="ruby-identifier">colinear_with?</span>(<span class="ruby-identifier">ending_at</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">starts</span> = <span class="ruby-identifier">starting_at</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ends</span>   = <span class="ruby-identifier">ending_at</span>
   <span class="ruby-identifier">starting_at</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">RelativeTime</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ending_at</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">RelativeTime</span>)
@@ -265,6 +270,39 @@
     
       <div id="public-instance-method-details" class="method-section section">
         <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="21-3D-method" class="method-detail ">
+          <a name="method-i-21-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">!=</span><span
+              class="method-args">(b)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="21-3D-source">
+<pre>
+<span class="ruby-comment"># File lib/time_span.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">!=</span> (<span class="ruby-identifier">b</span>)
+  <span class="ruby-operator">!</span><span class="ruby-identifier">end_with</span>(<span class="ruby-identifier">b</span>) <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">starts_with</span>(<span class="ruby-identifier">b</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 21-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 21-3D-method -->
 
       
         <div id="3C-method" class="method-detail ">
@@ -286,7 +324,7 @@
             
             <div class="method-source-code" id="3C-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 88</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 93</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;</span> (<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">ends_before_other_starts?</span>(<span class="ruby-identifier">b</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -319,7 +357,7 @@
             
             <div class="method-source-code" id="3D-3D-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 84</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 85</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">==</span> (<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">ends_with?</span>(<span class="ruby-identifier">b</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">starts_with?</span>(<span class="ruby-identifier">b</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -352,7 +390,7 @@
             
             <div class="method-source-code" id="3E-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 92</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 97</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">&gt;</span> (<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">starts_after_other_ends?</span>(<span class="ruby-identifier">b</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -385,7 +423,7 @@
             
             <div class="method-source-code" id="contained_fully_inside-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 96</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 101</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">contained_fully_inside?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">starts_after?</span>(<span class="ruby-identifier">b</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ends_before?</span>(<span class="ruby-identifier">b</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -418,7 +456,7 @@
             
             <div class="method-source-code" id="contained_inside-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 100</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 105</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">contained_inside?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">starts_on_or_after?</span>(<span class="ruby-identifier">b</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ends_on_or_before?</span>(<span class="ruby-identifier">b</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -451,7 +489,7 @@
             
             <div class="method-source-code" id="contains-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 108</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 113</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">contains?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">starts_before_or_with?</span>(<span class="ruby-identifier">b</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ends_on_or_after?</span>(<span class="ruby-identifier">b</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -484,7 +522,7 @@
             
             <div class="method-source-code" id="contains_fully-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 104</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 109</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">contains_fully?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">starts_before?</span>(<span class="ruby-identifier">b</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ends_after?</span>(<span class="ruby-identifier">b</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -517,7 +555,7 @@
             
             <div class="method-source-code" id="ends_after-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 53</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_after?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">ends</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
 <span class="ruby-keyword">end</span></pre>
@@ -550,7 +588,7 @@
             
             <div class="method-source-code" id="ends_as_other_starts-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 65</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 66</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_as_other_starts?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">ends</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -583,7 +621,7 @@
             
             <div class="method-source-code" id="ends_before-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 41</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_before?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">ends</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
 <span class="ruby-keyword">end</span></pre>
@@ -616,7 +654,7 @@
             
             <div class="method-source-code" id="ends_before_other_starts-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 61</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 62</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_before_other_starts?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">ends</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -649,7 +687,7 @@
             
             <div class="method-source-code" id="ends_on_or_after-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 49</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_on_or_after?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">ends</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
 <span class="ruby-keyword">end</span></pre>
@@ -682,7 +720,7 @@
             
             <div class="method-source-code" id="ends_on_or_before-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 45</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_on_or_before?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">ends</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
 <span class="ruby-keyword">end</span></pre>
@@ -715,7 +753,7 @@
             
             <div class="method-source-code" id="ends_with-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 57</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_with?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">ends</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
 <span class="ruby-keyword">end</span></pre>
@@ -748,7 +786,7 @@
             
             <div class="method-source-code" id="starts_after-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 24</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_after?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">starts</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -781,7 +819,7 @@
             
             <div class="method-source-code" id="starts_after_other_ends-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 69</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 70</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_after_other_ends?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">starts</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
 <span class="ruby-keyword">end</span></pre>
@@ -814,7 +852,7 @@
             
             <div class="method-source-code" id="starts_as_other_ends-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 73</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_as_other_ends?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">starts</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
 <span class="ruby-keyword">end</span></pre>
@@ -847,7 +885,7 @@
             
             <div class="method-source-code" id="starts_before-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 20</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_before?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">starts</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -880,7 +918,7 @@
             
             <div class="method-source-code" id="starts_before_or_with-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 37</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_before_or_with?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">starts</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -913,7 +951,7 @@
             
             <div class="method-source-code" id="starts_on_or_after-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 28</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_on_or_after?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">starts</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -946,7 +984,7 @@
             
             <div class="method-source-code" id="starts_with-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 33</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_with?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-identifier">starts</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
 <span class="ruby-keyword">end</span></pre>

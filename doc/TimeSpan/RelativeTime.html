@@ -50,7 +50,7 @@
       <div id="parent-class-section" class="section">
         <h3 class="section-header">Parent</h3>
         
-        <p class="link">DateTime</p>
+        <p class="link">Object</p>
         
       </div>
       
@@ -59,6 +59,24 @@
 
       
 
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-colinear_with-3F">#colinear_with?</a></li>
+          
+          <li><a href="#method-i-positioned-3F">#positioned?</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+          <li><a href="#method-i-valid_and_comparable_with-3F">#valid_and_comparable_with?</a></li>
+          
+        </ul>
+      </div>
       
 
       
@@ -98,6 +116,8 @@
         
           <li><a href="../TimeSpan/RelativeTime.html">TimeSpan::RelativeTime</a></li>
         
+          <li><a href="../TimeSpan/TimeLine.html">TimeSpan::TimeLine</a></li>
+        
           <li><a href="../TimeSpan/TimeSpan.html">TimeSpan::TimeSpan</a></li>
         
         </ul>
@@ -113,7 +133,20 @@
 
     <div id="description" class="description">
       
-<p>first implementation is just as DateTime; later add fuzzy  time</p>
+<pre>#</pre>
+
+<p>A relative time must be able to be have equal times                        
+# implemented as an Array of Arrays; all elements of the ‘subarray’ are
+equal in time,    # otherwise, the time relationship are based on position
+in the main array                #</p>
+
+<pre>#</pre>
+
+<p>diff cannot be done, it makes no sense, due to the fuzziness               
+#</p>
+
+<pre>                                                                                       #
+RelativeTime must be within a TimeLine                                                 #</pre>
 
     </div><!-- description -->
 
@@ -128,9 +161,234 @@
       
 
       
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="reference_to-attribute-method" class="method-detail">
+          <a name="reference_to"></a>
+          
+          <a name="reference_to="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">reference_to</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="timeline-attribute-method" class="method-detail">
+          <a name="timeline"></a>
+          
+          <a name="timeline="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">timeline</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
 
       <!-- Methods -->
       
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(tline, ref)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>create a realtive time *within a timeline*  after position</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/time_span.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>  <span class="ruby-identifier">tline</span>, <span class="ruby-identifier">ref</span>
+   <span class="ruby-ivar">@timeline</span>= <span class="ruby-identifier">tline</span>
+   <span class="ruby-ivar">@reference_to</span>= <span class="ruby-identifier">ref</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="colinear_with-3F-method" class="method-detail ">
+          <a name="method-i-colinear_with-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">colinear_with?</span><span
+              class="method-args">(b)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="colinear_with-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/time_span.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">colinear_with?</span>(<span class="ruby-identifier">b</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-identifier">b</span>.<span class="ruby-identifier">timeline</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- colinear_with-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- colinear_with-3F-method -->
+
+      
+        <div id="positioned-3F-method" class="method-detail ">
+          <a name="method-i-positioned-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">positioned?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="positioned-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/time_span.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">positioned?</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">indices_of</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- positioned-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- positioned-3F-method -->
+
+      
+        <div id="to_s-method" class="method-detail ">
+          <a name="method-i-to_s"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_s</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="to_s-source">
+<pre>
+<span class="ruby-comment"># File lib/time_span.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">reference_to</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- to_s-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_s-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+      <div id="protected-instance-method-details" class="method-section section">
+        <h3 class="section-header">Protected Instance Methods</h3>
+
+      
+        <div id="valid_and_comparable_with-3F-method" class="method-detail ">
+          <a name="method-i-valid_and_comparable_with-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">valid_and_comparable_with?</span><span
+              class="method-args">(b)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="valid_and_comparable_with-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/time_span.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">valid_and_comparable_with?</span>(<span class="ruby-identifier">b</span>)
+  <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">b</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">nil?</span>  <span class="ruby-operator">&amp;&amp;</span>  <span class="ruby-identifier">colinear_with?</span>(<span class="ruby-identifier">b</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- valid_and_comparable_with-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- valid_and_comparable_with-3F-method -->
+
+      
+      </div><!-- protected-instance-method-details -->
+    
     </div><!-- 5Buntitled-5D -->
   
 
