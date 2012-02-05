@@ -2,147 +2,152 @@ require File.expand_path(File.dirname(__FILE__) + '../../spec_helper')
 
 describe "TimeSpan" do
 
-  context "TimeSpan" do
+  let(:timeline) do
+    TimeSpan::TimeLine.new  "test timeline"
+  end
+
+  let (:time_a) do
+    TimeSpan::RelativeTime.new timeline, "Some timepoint a"
+  end
+
+  let (:time_b) do
+    TimeSpan::RelativeTime.new timeline, "Some timepoint b"
+  end
+
+  let (:time_c) do
+    TimeSpan::RelativeTime.new timeline, "Some timepoint c"
+  end
+
+  let (:time_d) do
+    TimeSpan::RelativeTime.new timeline, "Some timepoint d"
+  end
+
+  before(:each) do
+    timeline.append time_a
+    timeline.append time_b
+    timeline.append time_c
+  end
+
+  let (:time_span) do
+    TimeSpan::TimeSpan.new(time_a, time_c)
+  end
+
+  context "TimeSpan::TimeLine" do
 
     context "instance methods" do
 
-      let (:alpha_start) do
-        TimeSpan::RelativeTime.parse("Jan 1, 2007")
-      end
+      context "insertion"  do
 
-      let (:alpha_end) do
-       alpha_start + 2000
-      end
+        it "inserts a TimeSpan::RelativeTime into the timeline." do
+          timeline.line.should_not be_empty
+        end
 
+        it 'populates the indices_of as well' do
+           timeline.indices_of.should_not be_empty
+        end
 
-      let (:alpha) do
-        TimeSpan::TimeSpan.new(alpha_start, alpha_end)
-      end
+        it "won't insert into the wrong timeline" do
+          timeline_b = TimeSpan::TimeLine.new "Another Timeline"
+          lambda {
+          timeline_b.append(time_a) }.should raise_error RuntimeError
+        end
 
-      context "single time point comparators" do
+        it "populates the index hash"  do
+          timeline.indices_of.should_not be_empty
+        end
 
-        context "same ends time, alpha starts before beta" do
+        it "appends to the next element if it exists" do
+          timeline.append_to_next time_a, time_d
+          timeline.line.should  ==  [[time_a], [time_b, time_d], [time_c]]
+        end
 
-          let (:beta_start) do
-            TimeSpan::RelativeTime.parse("Jan 1, 2008")
-          end
+        it "inserts after and creates if element does not exist" do
+          timeline.append_to_next time_c, time_d
+          timeline.line.should ==  [[time_a], [time_b], [time_c], [time_d]]
+        end
 
-          let (:beta) do
-            TimeSpan::TimeSpan.new(beta_start, alpha_end)
-          end
+        it "inserts after a given time with insert_next" do
+          timeline.insert_before_next time_a, time_d
+          timeline.line.should ==  [[time_a], [time_d], [time_b], [time_c]]
+        end
 
-          context "alpha" do
-
-            it "starts before beta" do
-              alpha.should be_starts_before(beta)
-            end
-
-
-            it "ends with beta" do
-              alpha.should be_ends_with(beta)
-            end
-
-          end
-
-          context "alpha does not" do
-
-            it "start after beta" do
-              alpha.should_not be_starts_after(beta)
-            end
-
-            it "start with beta" do
-              alpha.should_not be_starts_with(beta)
-            end
-
-            it "end before beta" do
-              alpha.should_not be_ends_before(beta)
-            end
-
-            it "end after beta" do
-              alpha.should_not be_ends_after(beta)
-            end
-
-            it "end before beta starts" do
-              alpha.should_not be_ends_before_other_starts(beta)
-            end
-
-            it "end as beta starts" do
-              alpha.should_not be_ends_as_other_starts(beta)
-            end
-
-            it "start after beta ends" do
-              alpha.should_not be_starts_after_other_ends(beta)
-            end
-
-            it "start as beta ends" do
-              alpha.should_not be_starts_as_other_ends(beta)
-            end
-
-          end
-
+        it "should adjust the indices when inserting next" do
+          timeline.insert_before_next time_a, time_d
+          timeline.indices_of[time_b].should == 2
         end
 
       end
 
-      context "time span comparators" do
+      context "appending" do
 
-        let (:beta_earliest) do
-          alpha_start - 1000
+        it "appends to the timeline" do
+          timeline.append time_d
+          timeline.indices_of[time_d].should == 3
         end
 
-        let (:beta_before_alpha_starts) do
-          alpha_start - 500
+        it "has only one RelativeTime after appending to an empty timeline" do
+          timeline.append time_d
+          timeline.line.size.should be(4)
         end
 
-        let (:beta_after_alpha_starts) do
-          alpha_start + 500
+      end
+
+      context "finding" do
+
+        it "finds an inserted time_span" do
+          timeline.position_of(time_b).should == 1
         end
 
-        let (:beta_before_alpha_ends) do
-          alpha_start + 1000
+      end
+
+      context "removal" do
+
+        it "removes the content with #remove(obj)"  do
+          timeline.remove time_b
+          timeline.position_of(time_b).should be_nil
         end
 
-        let (:beta_right_after_alpha_ends) do
-          alpha_end + 500
+        it "removes from the index as well" do
+          timeline.remove time_b
+          timeline.indices_of[time_b].should be_nil
         end
 
-        let (:beta_last) do
-          alpha_end + 1000
+        it "does nothing when asked to remove a non-existent object" do
+          lambda { timeline.remove(time_d)}.should_not change(timeline, :indices_of)
         end
 
-        it "identical start and end times should return == as true" do
-          beta = TimeSpan::TimeSpan.new(alpha_start, alpha_end)
-          alpha.should == beta
+      end
+
+      context "compression" do
+
+        it "returns identity when compressing full timeline" do
+          timeline.compress!
+          timeline.line.size.should be 3
         end
 
-        it "alpha ends before beta starts, should return alpha < beta" do
-          beta = TimeSpan::TimeSpan.new(beta_right_after_alpha_ends, beta_last)
-          alpha.should < beta
+        it "does not remove from index position when not compressing" do
+          timeline.remove time_b
+          timeline.indices_of[time_c].should == 2
         end
 
-        it "alpha starts after beta ends, should return alpha > beta" do
-          beta = TimeSpan::TimeSpan.new(beta_earliest, beta_before_alpha_starts)
-          alpha.should > beta
+        it "removes from the index when compressing" do
+          timeline.remove time_b
+          timeline.compress!
+          timeline.indices_of[time_c].should == 1
         end
 
-        it "alpha starting after and ending before beta should be contained inside beta" do
-          beta = TimeSpan::TimeSpan.new(beta_earliest, beta_last)
-          alpha.should be_contained_fully_inside(beta)
+        it "removes content positions from the timeline when compressing" do
+          timeline.remove time_b
+          timeline.compress!
+          timeline.line.should == [[time_a], [time_c]]
         end
 
-        it "alpha starting with beta but ending before, is contained inside" do
-          beta = TimeSpan::TimeSpan.new(alpha_start, beta_last)
-          alpha.should be_contained_inside(beta)
-        end
+      end
 
-        it "alpha starting before and ending after full contains beta" do
-          beta = TimeSpan::TimeSpan.new(beta_after_alpha_starts, beta_before_alpha_ends)
-          alpha.should be_contains_fully(beta)
-        end
+      context "finding position" do
 
-        it "alpha starting before but ending with beta should contain beta" do
-          beta = TimeSpan::TimeSpan.new(beta_after_alpha_starts, alpha_end)
-          alpha.should be_contains(beta)
+        it "returns the position of a RelativeTime" do
+          timeline.position_of(time_b).should == 1
         end
 
       end
@@ -151,6 +156,172 @@ describe "TimeSpan" do
 
   end
 
+  context "TimeSpan::TimeSpan" do
 
+    context "instance methods" do
+
+      context "creation" do
+
+        it "should not allow creation when RelativeTime elements which are not on the same TimeLine" do
+          other_timeline = TimeSpan::TimeLine.new "another timeline"
+          time_other = TimeSpan::RelativeTime.new other_timeline, "Time on other timeline"
+          lambda {
+            TimeSpan::TimeSpan.new(time_a, time_other)
+          }.should raise_error
+        end
+
+      end
+
+      context "single time point comparators" do
+
+        context "same end time, time_span starts before other time_span" do
+
+          let (:time_span_2) do
+            TimeSpan::TimeSpan.new(time_b, time_c)
+          end
+
+          it "start before other time_span" do
+            time_span.should be_starts_before(time_span_2)
+          end
+
+          it "end with other time_span" do
+            time_span.should be_ends_with(time_span_2)
+          end
+
+          it "not start after other time_span" do
+            time_span.should_not be_starts_after(time_span_2)
+          end
+
+          it "not start with other time_span" do
+            time_span.should_not be_starts_with(time_span_2)
+          end
+
+          it "not end before other time_span" do
+            time_span.should_not be_ends_before(time_span_2)
+          end
+
+          it "end after other time_span" do
+            time_span.should_not be_ends_after(time_span_2)
+          end
+
+          it "end before other time_span starts" do
+            time_span.should_not be_ends_before_other_starts(time_span_2)
+          end
+
+          it "end as other time_span starts" do
+            time_span.should_not be_ends_as_other_starts(time_span_2)
+          end
+
+          it "start after other time_span ends" do
+            time_span.should_not be_starts_after_other_ends(time_span_2)
+          end
+
+          it "start as other time_span ends" do
+            time_span.should_not be_starts_as_other_ends(time_span_2)
+          end
+
+        end
+
+      end
+
+      context "time span comparators" do
+
+        let (:time_d) do
+          TimeSpan::RelativeTime.new timeline, "Some timepoint d"
+        end
+
+        let (:time_e) do
+          TimeSpan::RelativeTime.new timeline, "Some timepoint e"
+        end
+
+        before(:each) do
+          timeline.append time_a
+          timeline.append time_b
+          timeline.append time_c
+          timeline.append time_d
+          timeline.append time_e
+        end
+
+        let (:time_span_mid) do
+          TimeSpan::TimeSpan.new(time_b, time_c)
+        end
+
+        let(:time_span_all) do
+          TimeSpan::TimeSpan.new(time_a, time_e)
+        end
+
+        let (:time_span_last) do
+          TimeSpan::TimeSpan.new(time_d, time_e)
+        end
+
+        it "identical start and end times should return == as true" do
+          time_span_3 = TimeSpan::TimeSpan.new(time_a, time_c)
+          time_span.should == time_span_3
+        end
+
+        it "any differences should return not equal" do
+          time_span_all.should_not == time_span               # end times differ
+        end
+
+        it "time_span ends before time_span_last starts, should return time_span < time_span_last" do
+          time_span.should < time_span_last
+        end
+
+        it "time_span starts after time_span_last ends, should return time_span_last > time_span" do
+          time_span_last.should > time_span
+        end
+
+        it "time_span starting after and ending before time_span_mid should be contained inside time_span_mid" do
+          time_span_mid.should be_contained_fully_inside(time_span_all)
+        end
+
+        it "time_span starting with time_span_all but ending before, is contained inside" do
+          time_span.should be_contained_inside(time_span_all)
+        end
+
+        it "time_span starting before and ending after time_span_full contains time_span_mid" do
+          time_span_all.should be_contains_fully(time_span_mid)
+        end
+
+        it "time_span starting before but ending with time_span_mid should contain time_span_mmid" do
+          time_span.should be_contains(time_span_mid)
+        end
+
+      end
+
+    end
+
+  end
+
+  context "TimeSpan::RelativeTime" do
+
+    context "instance methods" do
+
+      ## comparators make sense only in TimeLine context, not tested here.
+
+      let (:timeline) do
+        TimeSpan::TimeLine.new "Some timeline"
+      end
+
+      let (:time) do
+        TimeSpan::RelativeTime.new timeline, "time point"
+      end
+
+      it "returns a string if using '.to_s'" do
+        time.to_s.should == 'time point'
+      end
+
+      it "is not positioned if not appended" do
+        time.should_not be_positioned
+      end
+
+      it 'is positioned once appended.' do
+        timeline.append time
+        time.should be_positioned
+      end
+
+    end
+
+  end
 
 end
