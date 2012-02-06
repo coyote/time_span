@@ -1,3 +1,3 @@
 module TimeSpan
-  VERSION = "0.0.1.alpha05"
+  VERSION = "0.0.1.beta.01"
 end

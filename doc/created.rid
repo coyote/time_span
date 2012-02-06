@@ -1,7 +1,7 @@
-Sat, 04 Feb 2012 21:02:13 -0800
+Sun, 05 Feb 2012 20:05:38 -0800
 ./spec/spec_helper.rb	Mon, 30 Jan 2012 19:58:16 -0800
 ./spec/time_span/time_span_spec.rb	Sat, 04 Feb 2012 20:55:54 -0800
-./lib/time_span/version.rb	Sat, 04 Feb 2012 20:58:56 -0800
-./lib/time_span.rb	Sat, 04 Feb 2012 20:53:50 -0800
+./lib/time_span/version.rb	Sat, 04 Feb 2012 21:03:20 -0800
+./lib/time_span.rb	Sun, 05 Feb 2012 20:01:10 -0800
 ./Gemfile	Mon, 30 Jan 2012 19:39:04 -0800
 ./Rakefile	Mon, 30 Jan 2012 19:39:04 -0800

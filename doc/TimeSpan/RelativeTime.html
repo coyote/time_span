@@ -133,20 +133,34 @@
 
     <div id="description" class="description">
       
-<pre>#</pre>
-
-<p>A relative time must be able to be have equal times                        
-# implemented as an Array of Arrays; all elements of the ‘subarray’ are
-equal in time,    # otherwise, the time relationship are based on position
-in the main array                #</p>
+<p>class <a href="RelativeTime.html">RelativeTime</a>                         
+#</p>
 
 <pre>#</pre>
+
+<p>public methods:                                                            
+#</p>
+
+<pre>comparators: &lt; &lt;= == != &gt;= &gt;                                                                      #
+   work on any two RelativeTime objects on the same TimeLine                                      #
+positioned?                                                                                       #
+   true if a RelativeTime has been put on a TimeLine                                              #                                                                                   #
+colinear_with?(RelativeTime.new)                                                                  #
+   true if both RelativeTime objects are positioned and on same TimeLine                          #
+                                                                                                  #</pre>
+
+<p>protected method:                                                          
+#</p>
+
+<pre>valid_and_comparable_with?(RelativeTime)                                                          #
+   true if                                                                                        #
+                                                                                                  #</pre>
 
 <p>diff cannot be done, it makes no sense, due to the fuzziness               
 #</p>
 
-<pre>                                                                                       #
-RelativeTime must be within a TimeLine                                                 #</pre>
+<pre>                                                                                                   #
+RelativeTime must be within a TimeLine                                                             #</pre>
 
     </div><!-- description -->
 
@@ -228,7 +242,7 @@ RelativeTime must be within a TimeLine                                          
             
             <div class="method-source-code" id="new-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 226</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 261</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>  <span class="ruby-identifier">tline</span>, <span class="ruby-identifier">ref</span>
    <span class="ruby-ivar">@timeline</span>= <span class="ruby-identifier">tline</span>
    <span class="ruby-ivar">@reference_to</span>= <span class="ruby-identifier">ref</span>
@@ -268,9 +282,9 @@ RelativeTime must be within a TimeLine                                          
             
             <div class="method-source-code" id="colinear_with-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 247</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 282</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">colinear_with?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-identifier">b</span>.<span class="ruby-identifier">timeline</span>)
+  <span class="ruby-identifier">b</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>) <span class="ruby-operator">&amp;&amp;</span>  <span class="ruby-identifier">b</span>.<span class="ruby-identifier">positioned?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">positioned?</span> <span class="ruby-operator">&amp;&amp;</span>  <span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-identifier">b</span>.<span class="ruby-identifier">timeline</span>)
 <span class="ruby-keyword">end</span></pre>
             </div><!-- colinear_with-3F-source -->
             
@@ -301,9 +315,9 @@ RelativeTime must be within a TimeLine                                          
             
             <div class="method-source-code" id="positioned-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 243</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 278</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">positioned?</span>
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">indices_of</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">timeline</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">indices_of</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
             </div><!-- positioned-3F-source -->
             
@@ -334,7 +348,7 @@ RelativeTime must be within a TimeLine                                          
             
             <div class="method-source-code" id="to_s-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 231</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 266</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
   <span class="ruby-identifier">reference_to</span>.<span class="ruby-identifier">to_s</span>
 <span class="ruby-keyword">end</span></pre>
@@ -373,7 +387,7 @@ RelativeTime must be within a TimeLine                                          
             
             <div class="method-source-code" id="valid_and_comparable_with-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 254</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 289</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">valid_and_comparable_with?</span>(<span class="ruby-identifier">b</span>)
   <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">b</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">nil?</span>  <span class="ruby-operator">&amp;&amp;</span>  <span class="ruby-identifier">colinear_with?</span>(<span class="ruby-identifier">b</span>)
 <span class="ruby-keyword">end</span></pre>

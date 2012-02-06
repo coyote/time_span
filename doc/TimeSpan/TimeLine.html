@@ -143,6 +143,33 @@
 
     <div id="description" class="description">
       
+<p>class <a href="TimeLine.html">TimeLine</a>                                 
+#</p>
+
+<pre>#</pre>
+
+<p><a href="TimeLine.html">TimeLine</a> is how <a
+href="RelativeTime.html">RelativeTime</a> objects are related to each
+other, they have to have the same         #</p>
+
+<pre>frame of reference.                                                                              #
+                                                                                                 #</pre>
+
+<p>instance methods:                                                          
+#</p>
+
+<pre>                                                                                                 #
+to_s  -- convenience method to see which object we have                                          #
+position_of(obj) -- its location on the TimeLine                                                 #
+increase_after(position, amount) -- make room in the index for an insertion                      #
+append (obj)  -- add obj to end of the TimeLine                                                  #
+append_to_next(relative_object, object, relative) at relative offset to relative_object, put obj #
+insert_before_next(relative_object, object, relative) inserts into new time slot relative to relative_object
+insert_at(position, object) -- places object at position, appending if equal time exists         #
+remove(obj) -- remove object from the TimeLine                                                   #
+compress! -- compresses the TimeLine, removing [] and adjusting the index accordingly            #
+                                                                                                 #</pre>
+
     </div><!-- description -->
 
     
@@ -240,7 +267,7 @@
             
             <div class="method-source-code" id="new-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 127</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 156</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>=<span class="ruby-string">&quot;&quot;</span>)
   <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
   <span class="ruby-ivar">@line</span> = []
@@ -275,13 +302,13 @@
 
           <div class="method-description">
             
-            
+            <p>add to the  end of the <a href="TimeLine.html">TimeLine</a></p>
             
 
             
             <div class="method-source-code" id="append-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 137</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 177</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">append</span>(<span class="ruby-identifier">obj</span>)
   <span class="ruby-identifier">insert_at</span>(<span class="ruby-ivar">@line</span>.<span class="ruby-identifier">size</span>, <span class="ruby-identifier">obj</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -308,13 +335,13 @@
 
           <div class="method-description">
             
-            
+            <p>inserts to the end of the relative object’s time, becoming equal with it</p>
             
 
             
             <div class="method-source-code" id="append_to_next-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 147</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 182</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">append_to_next</span>(<span class="ruby-identifier">relative_obj</span>, <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">relative</span>=<span class="ruby-value">1</span>)
   <span class="ruby-identifier">insert_at</span>(<span class="ruby-identifier">position_of</span>(<span class="ruby-identifier">relative_obj</span>)<span class="ruby-operator">+</span><span class="ruby-identifier">relative</span>, <span class="ruby-identifier">obj</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -350,24 +377,19 @@ href="TimeLine.html#attribute-i-indices_of">indices_of</a></p>
             
             <div class="method-source-code" id="compress-21-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 187</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 219</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">compress!</span>
-
   <span class="ruby-identifier">mod_level</span> = <span class="ruby-value">0</span>
   <span class="ruby-identifier">offsets</span> = []
   <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">line</span>.<span class="ruby-identifier">size</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">mod_level</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">empty?</span>
     <span class="ruby-identifier">offsets</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">mod_level</span>
   <span class="ruby-keyword">end</span>
-
   <span class="ruby-comment">## poor man's transaction.  Don't do directly on indices_of so less chance of interruption</span>
   <span class="ruby-identifier">indices</span> = <span class="ruby-identifier">indices_of</span>
-
-  <span class="ruby-comment">## refactor to use increase_after</span>
   <span class="ruby-identifier">indices</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">indices</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">indices</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">offsets</span>[<span class="ruby-identifier">indices</span>[<span class="ruby-identifier">key</span>]]
   <span class="ruby-keyword">end</span>
-
   <span class="ruby-identifier">indices_of</span> = <span class="ruby-identifier">indices</span>
   <span class="ruby-ivar">@line</span>.<span class="ruby-identifier">delete</span>([])
 <span class="ruby-keyword">end</span></pre>
@@ -400,7 +422,7 @@ href="TimeLine.html#attribute-i-indices_of">indices_of</a></p>
             
             <div class="method-source-code" id="increase_after-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 141</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 168</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">increase_after</span>(<span class="ruby-identifier">pos</span>, <span class="ruby-identifier">by</span>=<span class="ruby-value">1</span>)
   <span class="ruby-ivar">@indices_of</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
     <span class="ruby-ivar">@indices_of</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">by</span> <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@indices_of</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">pos</span>)
@@ -429,24 +451,23 @@ href="TimeLine.html#attribute-i-indices_of">indices_of</a></p>
 
           <div class="method-description">
             
-            <p>needs work for <a href="RelativeTime.html">RelativeTime</a> objects</p>
+            <p>place obj at the numbered position</p>
             
 
             
             <div class="method-source-code" id="insert_at-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 159</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 195</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">insert_at</span>(<span class="ruby-identifier">pos</span>, <span class="ruby-identifier">obj</span>)
-
   <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;can only add a time to its own timeline&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">equal?</span> <span class="ruby-keyword">self</span>
   <span class="ruby-keyword">if</span> <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">pos</span>].<span class="ruby-identifier">nil?</span>
     <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">pos</span>] = [<span class="ruby-identifier">obj</span>]
-    <span class="ruby-ivar">@indices_of</span>[<span class="ruby-identifier">obj</span>] = <span class="ruby-identifier">pos</span>
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">op</span> = <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">pos</span>].<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-string">'&lt;&lt;'</span>  <span class="ruby-operator">:</span> <span class="ruby-string">'='</span>
-    <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">pos</span>].<span class="ruby-identifier">send</span>(<span class="ruby-identifier">op</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">obj</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">pos</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">obj</span>)  <span class="ruby-comment"># no dupliates</span>
-    <span class="ruby-ivar">@indices_of</span>[<span class="ruby-identifier">obj</span>] = <span class="ruby-identifier">pos</span>                                           <span class="ruby-comment"># dup overwrites</span>
+    <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">pos</span>].<span class="ruby-identifier">send</span>(<span class="ruby-identifier">op</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">obj</span>).<span class="ruby-identifier">uniq!</span>                <span class="ruby-comment"># no duplicates in same position</span>
+    <span class="ruby-comment"># dup in diff position overwrites below</span>
   <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@indices_of</span>[<span class="ruby-identifier">obj</span>] = <span class="ruby-identifier">pos</span>
 <span class="ruby-keyword">end</span></pre>
             </div><!-- insert_at-source -->
             
@@ -471,13 +492,13 @@ href="TimeLine.html#attribute-i-indices_of">indices_of</a></p>
 
           <div class="method-description">
             
-            
+            <p>inserts into a new space before the relative object (first parameter)</p>
             
 
             
             <div class="method-source-code" id="insert_before_next-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 151</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 187</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">insert_before_next</span>(<span class="ruby-identifier">relative_obj</span>, <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">relative_offset</span>=<span class="ruby-value">1</span>)
   <span class="ruby-identifier">relative_position</span> = <span class="ruby-identifier">position_of</span>(<span class="ruby-identifier">relative_obj</span>)
   <span class="ruby-identifier">increase_after</span>(<span class="ruby-identifier">relative_position</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">relative_offset</span>, <span class="ruby-identifier">relative_offset</span>)
@@ -507,13 +528,13 @@ href="TimeLine.html#attribute-i-indices_of">indices_of</a></p>
 
           <div class="method-description">
             
-            
+            <p>indices methods</p>
             
 
             
             <div class="method-source-code" id="position_of-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 133</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 164</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">position_of</span>(<span class="ruby-identifier">obj</span>)
   <span class="ruby-ivar">@indices_of</span>[<span class="ruby-identifier">obj</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -540,23 +561,21 @@ href="TimeLine.html#attribute-i-indices_of">indices_of</a></p>
 
           <div class="method-description">
             
-            
+            <p>cannot remove [] or the @<a
+href="TimeLine.html#attribute-i-indices_of">indices_of</a> will be wrong
+call  compress to remove the extra []s</p>
             
 
             
             <div class="method-source-code" id="remove-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 172</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 209</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">remove</span>(<span class="ruby-identifier">obj</span>)
-  <span class="ruby-comment"># cannot remove [] or the @indices_of will be wrong</span>
-  <span class="ruby-comment"># call to #compress to remove the extra []s</span>
   <span class="ruby-identifier">pos</span> =  <span class="ruby-identifier">position_of</span>(<span class="ruby-identifier">obj</span>)
-
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">pos</span>                        <span class="ruby-comment"># do nothing if it isn't there'</span>
-    <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">pos</span>].<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">obj</span>)
-    <span class="ruby-ivar">@indices_of</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">obj</span>)
+    <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">pos</span>].<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">obj</span>)      <span class="ruby-comment">#  remove from list</span>
+    <span class="ruby-ivar">@indices_of</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">obj</span>)     <span class="ruby-comment">#  remove from index</span>
   <span class="ruby-keyword">end</span>
-
 <span class="ruby-keyword">end</span></pre>
             </div><!-- remove-source -->
             
@@ -587,7 +606,7 @@ href="TimeLine.html#attribute-i-indices_of">indices_of</a></p>
             
             <div class="method-source-code" id="to_s-source">
 <pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 123</span>
+<span class="ruby-comment"># File lib/time_span.rb, line 152</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
   <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
 <span class="ruby-keyword">end</span></pre>
