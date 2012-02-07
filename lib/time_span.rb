@@ -15,8 +15,8 @@ module TimeSpan
       raise "Cannot make a span unless both points are on the same time_line" unless  starting_at.colinear_with?(ending_at)
       self.starts           = starting_at
       self.ends             = ending_at
-      self.time_line        = t_line               ## this is not working,
-      self.time_line.spans  << self           ## but this works !!!???? #WTF?
+      self.time_line        = t_line
+      self.time_line.spans  << self
       self.name             = nom
       starting_at.kind_of?(RelativeTime) && ending_at.kind_of?(RelativeTime) && (starting_at <= ending_at)
     end
@@ -158,6 +158,10 @@ module TimeSpan
 
     def to_s
       name.to_s
+    end
+
+    def inspect
+      line.inspect + name
     end
 
     def all_endpoint_statuses
