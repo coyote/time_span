@@ -22,19 +22,39 @@ describe "TimeSpan" do
     TimeSpan::RelativeTime.new timeline, "Some timepoint d"
   end
 
+  let (:time_span) do
+    TimeSpan::TimeSpan.new(time_a, time_c, timeline, "testing time span")
+  end
+
+
   before(:each) do
     timeline.append time_a
     timeline.append time_b
     timeline.append time_c
   end
 
-  let (:time_span) do
-    TimeSpan::TimeSpan.new(time_a, time_c)
-  end
 
   context "TimeSpan::TimeLine" do
 
     context "instance methods" do
+
+      context "statues" do
+
+        it "should get all the endpoint statuses" do
+          timeline.all_endpoint_statuses.should ==  {time_span => [time_span.starts.reference_to, time_span.ends.reference_to]}
+        end
+
+        it "knows the statuses for all associated TimeSpan objects" do
+          timeline.all_relative_time_statuses.sort.should == ["Some timepoint a", "Some timepoint b", "Some timepoint c"]
+        end
+
+      end
+
+      context "spans" do
+        it "the TimeLine knows its TimeSpan list" do
+          timeline.spans.should include(time_span)
+        end
+      end
 
       context "insertion"  do
 
@@ -172,12 +192,21 @@ describe "TimeSpan" do
 
       end
 
+      context "relative status methods" do
+
+        it "should get the relative statuses for the endpoints" do
+          time_span.endpoint_statuses.should == { time_span => [time_a.reference_to, time_c.reference_to]}
+        end
+
+      end
+
+
       context "single time point comparators" do
 
         context "same end time, time_span starts before other time_span" do
 
           let (:time_span_2) do
-            TimeSpan::TimeSpan.new(time_b, time_c)
+            TimeSpan::TimeSpan.new(time_b, time_c, timeline)
           end
 
           it "start before other time_span" do
@@ -243,19 +272,19 @@ describe "TimeSpan" do
         end
 
         let (:time_span_mid) do
-          TimeSpan::TimeSpan.new(time_b, time_c)
+          TimeSpan::TimeSpan.new(time_b, time_c, timeline)
         end
 
         let(:time_span_all) do
-          TimeSpan::TimeSpan.new(time_a, time_e)
+          TimeSpan::TimeSpan.new(time_a, time_e, timeline)
         end
 
         let (:time_span_last) do
-          TimeSpan::TimeSpan.new(time_d, time_e)
+          TimeSpan::TimeSpan.new(time_d, time_e, timeline)
         end
 
         it "identical start and end times should return == as true" do
-          time_span_3 = TimeSpan::TimeSpan.new(time_a, time_c)
+          time_span_3 = TimeSpan::TimeSpan.new(time_a, time_c, timeline)
           time_span.should == time_span_3
         end
 

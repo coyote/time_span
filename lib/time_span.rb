@@ -9,13 +9,20 @@ module TimeSpan
   #    and also range comparators
   class TimeSpan
 
-    attr_accessor :starts, :ends     # RelativeTime objects
+    attr_accessor :starts, :ends, :time_line, :name     # RelativeTime objects
 
-    def initialize(starting_at, ending_at)
-      raise "Cannot make a span unless both points are on the same timeline" unless  starting_at.colinear_with?(ending_at)
-      self.starts = starting_at
-      self.ends   = ending_at
+    def initialize(starting_at, ending_at, t_line, nom="(unnamed)")
+      raise "Cannot make a span unless both points are on the same time_line" unless  starting_at.colinear_with?(ending_at)
+      self.starts           = starting_at
+      self.ends             = ending_at
+      self.time_line        = t_line               ## this is not working,
+      self.time_line.spans  << self           ## but this works !!!???? #WTF?
+      self.name             = nom
       starting_at.kind_of?(RelativeTime) && ending_at.kind_of?(RelativeTime) && (starting_at <= ending_at)
+    end
+
+    def endpoint_statuses
+      {self => [self.starts.reference_to, self.ends.reference_to]}
     end
 
   #######################################################################################################
@@ -147,16 +154,30 @@ module TimeSpan
   #######################################################################################################
   class TimeLine <  Array
 
-    attr_accessor :line, :indices_of, :name
+    attr_accessor :line, :indices_of, :name, :spans
 
     def to_s
       name.to_s
+    end
+
+    def all_endpoint_statuses
+      spans.inject({}){ |acc, span| acc.merge!(span.endpoint_statuses) }
+    end
+
+    ## attached times only
+    def relative_times
+      indices_of.keys
+    end
+
+    def all_relative_time_statuses
+      relative_times.inject([]) {|acc, v| acc << v.reference_to }
     end
 
     def initialize(name="")
       @name = name
       @line = []
       @indices_of = {}
+      @spans = []
     end
 
     ## indices methods
@@ -193,7 +214,7 @@ module TimeSpan
 
     ## place obj at the numbered position
     def insert_at(pos, obj)
-      raise "can only add a time to its own timeline" unless obj.timeline.equal? self
+      raise "can only add a time to its own time_line" unless obj.time_line.equal? self
       if @line[pos].nil?
         @line[pos] = [obj]
       else
@@ -255,11 +276,11 @@ module TimeSpan
   #######################################################################################################
   class RelativeTime
 
-    attr_accessor  :timeline, :reference_to    # reference_to should respond_to? :to_s
+    attr_accessor  :time_line, :reference_to    # reference_to should respond_to? :to_s
 
-    # create a realtive time *within a timeline*  after position
+    # create a realtive time *within a time_line*  after position
     def initialize  tline, ref
-       @timeline= tline
+       @time_line= tline
        @reference_to= ref
     end
 
@@ -270,24 +291,24 @@ module TimeSpan
     ## any method on fixnum with 1 RelativeTime param can be in the list below
     %w{< <= == != >= >}.each{ |meth|
       self.send(:define_method, meth) {|b|
-        raise "can only compare to other times on the same timeline." unless valid_and_comparable_with?(b)     # can NOT compare across TimeLines
-        self.timeline.position_of(self).send(meth, b.timeline.position_of(b))
+        raise "can only compare to other times on the same time_line." unless valid_and_comparable_with?(b)     # can NOT compare across TimeLines
+        self.time_line.position_of(self).send(meth, b.time_line.position_of(b))
       }
     }
 
     def positioned?
-      self.timeline && self.timeline.indices_of.include?(self)
+      self.time_line && self.time_line.indices_of.include?(self)
     end
 
     def colinear_with?(b)
-      b.kind_of?(self.class) &&  b.positioned? && positioned? &&  timeline.equal?(b.timeline)
+      b.kind_of?(self.class) &&  b.positioned? && positioned? &&  time_line.equal?(b.time_line)
     end
 
 
     protected
 
     def valid_and_comparable_with?(b)
-      !self.timeline.nil? && !b.timeline.nil?  &&  colinear_with?(b)
+      !self.time_line.nil? && !b.time_line.nil?  &&  colinear_with?(b)
     end
 
 
