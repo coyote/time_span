@@ -12,7 +12,7 @@ module TimeSpan
     attr_accessor :starts, :ends, :time_line, :name     # RelativeTime objects
 
     def initialize(starting_at, ending_at, t_line, nom="(unnamed)")
-      raise "Cannot make a span unless both points are on the same time_line" unless  starting_at.colinear_with?(ending_at)
+      raise ArgumentError, "Cannot make a span unless both points are on the same time_line" unless  starting_at.colinear_with?(ending_at)
       self.starts           = starting_at
       self.ends             = ending_at
       self.time_line        = t_line
@@ -218,7 +218,7 @@ module TimeSpan
 
     ## place obj at the numbered position
     def insert_at(pos, obj)
-      raise "can only add a time to its own time_line" unless obj.time_line.equal? self
+      raise ArgumentError, "can only add a time to its own time_line" unless obj.time_line.equal? self
       if @line[pos].nil?
         @line[pos] = [obj]
       else
@@ -289,13 +289,13 @@ module TimeSpan
     end
 
     def to_s
-      reference_to.to_s
+      @reference_to.to_s
     end
 
     ## any method on fixnum with 1 RelativeTime param can be in the list below
     %w{< <= == != >= >}.each{ |meth|
       self.send(:define_method, meth) {|b|
-        raise "can only compare to other times on the same time_line." unless valid_and_comparable_with?(b)     # can NOT compare across TimeLines
+        raise ArgumentError, "can only compare to other times on the same time_line." unless valid_and_comparable_with?(b)     # can NOT compare across TimeLines
         self.time_line.position_of(self).send(meth, b.time_line.position_of(b))
       }
     }

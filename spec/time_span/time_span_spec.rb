@@ -31,6 +31,7 @@ describe "TimeSpan" do
     timeline.append time_a
     timeline.append time_b
     timeline.append time_c
+    timeline.spans <<  time_span
   end
 
 
@@ -39,6 +40,10 @@ describe "TimeSpan" do
     context "instance methods" do
 
       context "statues" do
+
+        it "should have non-empty endpoint statuses" do
+          timeline.all_endpoint_statuses.should_not be_empty
+        end
 
         it "should get all the endpoint statuses" do
           timeline.all_endpoint_statuses.should ==  {time_span => [time_span.starts.reference_to, time_span.ends.reference_to]}
@@ -69,7 +74,7 @@ describe "TimeSpan" do
         it "won't insert into the wrong timeline" do
           timeline_b = TimeSpan::TimeLine.new "Another Timeline"
           lambda {
-          timeline_b.append(time_a) }.should raise_error RuntimeError
+          timeline_b.append(time_a) }.should raise_error ArgumentError
         end
 
         it "populates the index hash"  do
@@ -182,12 +187,16 @@ describe "TimeSpan" do
 
       context "creation" do
 
+        it "should have a timeline associated" do
+          timeline.spans.should_not be_empty
+        end
+
         it "should not allow creation when RelativeTime elements which are not on the same TimeLine" do
           other_timeline = TimeSpan::TimeLine.new "another timeline"
           time_other = TimeSpan::RelativeTime.new other_timeline, "Time on other timeline"
           lambda {
             TimeSpan::TimeSpan.new(time_a, time_other)
-          }.should raise_error
+          }.should raise_error ArgumentError
         end
 
       end
