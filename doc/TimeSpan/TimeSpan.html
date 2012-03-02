@@ -1,1032 +1,2907 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: TimeSpan::TimeSpan
+  
+    &mdash; Documentation by YARD 0.7.5
+  
+</title>
 
-  <title>Class: TimeSpan::TimeSpan</title>
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
 
-  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
 
-</head>
-<body id="top" class="class">
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../index.html">Home</a>
-          <a href="../index.html#classes">Classes</a>
-          <a href="../index.html#methods">Methods</a>
-        </h3>
-      </div>
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (T)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../TimeSpan.html" title="TimeSpan (module)">TimeSpan</a></span></span>
+     &raquo; 
+    <span class="title">TimeSpan</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
     </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: TimeSpan::TimeSpan
+  
+  
+  
+</h1>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../lib/time_span_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/time_span.rb">lib/time_span.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
-
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
       
-    </div>
-
-    <div id="class-metadata">
-      
-      <!-- Parent Class -->
-      <div id="parent-class-section" class="section">
-        <h3 class="section-header">Parent</h3>
-        
-        <p class="link">Object</p>
-        
-      </div>
-      
-
-      
-
-      
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
+        <ul class="fullTree">
+          <li>Object</li>
           
-          <li><a href="#method-c-new">::new</a></li>
-          
-          <li><a href="#method-i-21-3D">#!=</a></li>
-          
-          <li><a href="#method-i-3C">#<</a></li>
-          
-          <li><a href="#method-i-3D-3D">#==</a></li>
-          
-          <li><a href="#method-i-3E">#></a></li>
-          
-          <li><a href="#method-i-contained_fully_inside-3F">#contained_fully_inside?</a></li>
-          
-          <li><a href="#method-i-contained_inside-3F">#contained_inside?</a></li>
-          
-          <li><a href="#method-i-contains-3F">#contains?</a></li>
-          
-          <li><a href="#method-i-contains_fully-3F">#contains_fully?</a></li>
-          
-          <li><a href="#method-i-ends_after-3F">#ends_after?</a></li>
-          
-          <li><a href="#method-i-ends_as_other_starts-3F">#ends_as_other_starts?</a></li>
-          
-          <li><a href="#method-i-ends_before-3F">#ends_before?</a></li>
-          
-          <li><a href="#method-i-ends_before_other_starts-3F">#ends_before_other_starts?</a></li>
-          
-          <li><a href="#method-i-ends_on_or_after-3F">#ends_on_or_after?</a></li>
-          
-          <li><a href="#method-i-ends_on_or_before-3F">#ends_on_or_before?</a></li>
-          
-          <li><a href="#method-i-ends_with-3F">#ends_with?</a></li>
-          
-          <li><a href="#method-i-starts_after-3F">#starts_after?</a></li>
-          
-          <li><a href="#method-i-starts_after_other_ends-3F">#starts_after_other_ends?</a></li>
-          
-          <li><a href="#method-i-starts_as_other_ends-3F">#starts_as_other_ends?</a></li>
-          
-          <li><a href="#method-i-starts_before-3F">#starts_before?</a></li>
-          
-          <li><a href="#method-i-starts_before_or_with-3F">#starts_before_or_with?</a></li>
-          
-          <li><a href="#method-i-starts_on_or_after-3F">#starts_on_or_after?</a></li>
-          
-          <li><a href="#method-i-starts_with-3F">#starts_with?</a></li>
+            <li class="next">TimeSpan::TimeSpan</li>
           
         </ul>
-      </div>
+        <a href="#" class="inheritanceTree">show all</a>
       
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/time_span.rb</dd>
+  
+</dl>
+<div class="clear"></div>
 
-      
-    </div>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>this class' objects have a starting and ending TimeSpan::RelativeTime, and
+both times must be on the same TimeSpan::TimeLine implements a large
+selection of comparators, both for start / end times (single time
+compartors), and also range comparators</p>
 
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../Gemfile.html">Gemfile</a></li>
-        
-          <li class="file"><a href="../Rakefile.html">Rakefile</a></li>
-        
-        </ul>
-      </div>
-      
 
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../TimeSpan.html">TimeSpan</a></li>
-        
-          <li><a href="../TimeSpan/RelativeTime.html">TimeSpan::RelativeTime</a></li>
-        
-          <li><a href="../TimeSpan/TimeLine.html">TimeSpan::TimeLine</a></li>
-        
-          <li><a href="../TimeSpan/TimeSpan.html">TimeSpan::TimeSpan</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
   </div>
-
-  <div id="documentation">
-    <h1 class="class">TimeSpan::TimeSpan</h1>
-
-    <div id="description" class="description">
+</div>
+<div class="tags">
+  
+<h3>Author:</h3>
+<ul class="author">
+  
+    <li>
       
-<p>this classes’ object have a starting and ending <a
-href="RelativeTime.html">RelativeTime</a>, and both times must be on the
-same <a href="TimeLine.html">TimeLine</a></p>
-
-<p>it implements a large selection of comparators, both for start / end times
-(single time compartors), and also range comparators</p>
-
-    </div><!-- description -->
-
-    
-    
-    
-    <div id="5Buntitled-5D" class="documentation-section">
       
-
       
-
       
-
-      
-      <!-- Attributes -->
-      <div id="attribute-method-details" class="method-section section">
-        <h3 class="section-header">Attributes</h3>
-
         
-        <div id="ends-attribute-method" class="method-detail">
-          <a name="ends"></a>
-          
-          <a name="ends="></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">ends</span><span
-              class="attribute-access-type">[RW]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
-        
-        <div id="starts-attribute-method" class="method-detail">
-          <a name="starts"></a>
-          
-          <a name="starts="></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">starts</span><span
-              class="attribute-access-type">[RW]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
-        
-      </div><!-- attribute-method-details -->
+        <div class='inline'>
+<p>Craig A. Cook</p>
+</div>
       
+    </li>
+  
+</ul>
 
-      <!-- Methods -->
-      
-      <div id="public-class-method-details" class="method-section section">
-        <h3 class="section-header">Public Class Methods</h3>
+</div>
 
-      
-        <div id="new-method" class="method-detail ">
-          <a name="method-c-new"></a>
 
-          
-          <div class="method-heading">
-            <span class="method-name">new</span><span
-              class="method-args">(starting_at, ending_at)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
 
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="new-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 14</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">starting_at</span>, <span class="ruby-identifier">ending_at</span>)
-  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Cannot make a span unless both points are on the same timeline&quot;</span> <span class="ruby-keyword">unless</span>  <span class="ruby-identifier">starting_at</span>.<span class="ruby-identifier">colinear_with?</span>(<span class="ruby-identifier">ending_at</span>)
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">starts</span> = <span class="ruby-identifier">starting_at</span>
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ends</span>   = <span class="ruby-identifier">ending_at</span>
-  <span class="ruby-identifier">starting_at</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">RelativeTime</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ending_at</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">RelativeTime</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">starting_at</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">ending_at</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- new-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- new-method -->
-
-      
-      </div><!-- public-class-method-details -->
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
     
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
-
-      
-        <div id="21-3D-method" class="method-detail ">
-          <a name="method-i-21-3D"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">!=</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="21-3D-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 98</span>
-<span class="ruby-keyword">def</span> <span class="ruby-operator">!=</span> (<span class="ruby-identifier">b</span>)
-  <span class="ruby-operator">!</span><span class="ruby-identifier">end_with</span>(<span class="ruby-identifier">b</span>) <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">starts_with</span>(<span class="ruby-identifier">b</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- 21-3D-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- 21-3D-method -->
-
-      
-        <div id="3C-method" class="method-detail ">
-          <a name="method-i-3C"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">&lt;</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="3C-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 102</span>
-<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;</span> (<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">ends_before_other_starts?</span>(<span class="ruby-identifier">b</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- 3C-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- 3C-method -->
-
-      
-        <div id="3D-3D-method" class="method-detail ">
-          <a name="method-i-3D-3D"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">==</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>&gt;= and &lt;=  intentionally not defined;</p>
-
-<pre>logically can only mean starts_after? or ends_before? respectively
-which are basically aliased to &gt; &amp; &lt;
-unless it is meant &lt; XOR =</pre>
-            
-
-            
-            <div class="method-source-code" id="3D-3D-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 94</span>
-<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span> (<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">ends_with?</span>(<span class="ruby-identifier">b</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">starts_with?</span>(<span class="ruby-identifier">b</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- 3D-3D-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- 3D-3D-method -->
-
-      
-        <div id="3E-method" class="method-detail ">
-          <a name="method-i-3E"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">&gt;</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="3E-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 106</span>
-<span class="ruby-keyword">def</span> <span class="ruby-operator">&gt;</span> (<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">starts_after_other_ends?</span>(<span class="ruby-identifier">b</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- 3E-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- 3E-method -->
-
-      
-        <div id="contained_fully_inside-3F-method" class="method-detail ">
-          <a name="method-i-contained_fully_inside-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">contained_fully_inside?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="contained_fully_inside-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 110</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">contained_fully_inside?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">starts_after?</span>(<span class="ruby-identifier">b</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ends_before?</span>(<span class="ruby-identifier">b</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- contained_fully_inside-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- contained_fully_inside-3F-method -->
-
-      
-        <div id="contained_inside-3F-method" class="method-detail ">
-          <a name="method-i-contained_inside-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">contained_inside?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="contained_inside-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 114</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">contained_inside?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">starts_on_or_after?</span>(<span class="ruby-identifier">b</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ends_on_or_before?</span>(<span class="ruby-identifier">b</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- contained_inside-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- contained_inside-3F-method -->
-
-      
-        <div id="contains-3F-method" class="method-detail ">
-          <a name="method-i-contains-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">contains?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="contains-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 122</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">contains?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">starts_before_or_with?</span>(<span class="ruby-identifier">b</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ends_on_or_after?</span>(<span class="ruby-identifier">b</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- contains-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- contains-3F-method -->
-
-      
-        <div id="contains_fully-3F-method" class="method-detail ">
-          <a name="method-i-contains_fully-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">contains_fully?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="contains_fully-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 118</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">contains_fully?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">starts_before?</span>(<span class="ruby-identifier">b</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ends_after?</span>(<span class="ruby-identifier">b</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- contains_fully-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- contains_fully-3F-method -->
-
-      
-        <div id="ends_after-3F-method" class="method-detail ">
-          <a name="method-i-ends_after-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">ends_after?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="ends_after-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 60</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_after?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">ends</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- ends_after-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- ends_after-3F-method -->
-
-      
-        <div id="ends_as_other_starts-3F-method" class="method-detail ">
-          <a name="method-i-ends_as_other_starts-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">ends_as_other_starts?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="ends_as_other_starts-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 72</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_as_other_starts?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">ends</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- ends_as_other_starts-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- ends_as_other_starts-3F-method -->
-
-      
-        <div id="ends_before-3F-method" class="method-detail ">
-          <a name="method-i-ends_before-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">ends_before?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="ends_before-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 48</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_before?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">ends</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- ends_before-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- ends_before-3F-method -->
-
-      
-        <div id="ends_before_other_starts-3F-method" class="method-detail ">
-          <a name="method-i-ends_before_other_starts-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">ends_before_other_starts?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="ends_before_other_starts-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 68</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_before_other_starts?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">ends</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- ends_before_other_starts-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- ends_before_other_starts-3F-method -->
-
-      
-        <div id="ends_on_or_after-3F-method" class="method-detail ">
-          <a name="method-i-ends_on_or_after-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">ends_on_or_after?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="ends_on_or_after-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 56</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_on_or_after?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">ends</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- ends_on_or_after-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- ends_on_or_after-3F-method -->
-
-      
-        <div id="ends_on_or_before-3F-method" class="method-detail ">
-          <a name="method-i-ends_on_or_before-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">ends_on_or_before?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="ends_on_or_before-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 52</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_on_or_before?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">ends</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- ends_on_or_before-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- ends_on_or_before-3F-method -->
-
-      
-        <div id="ends_with-3F-method" class="method-detail ">
-          <a name="method-i-ends_with-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">ends_with?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="ends_with-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 64</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">ends_with?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">ends</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- ends_with-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- ends_with-3F-method -->
-
-      
-        <div id="starts_after-3F-method" class="method-detail ">
-          <a name="method-i-starts_after-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">starts_after?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="starts_after-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 31</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_after?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">starts</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- starts_after-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- starts_after-3F-method -->
-
-      
-        <div id="starts_after_other_ends-3F-method" class="method-detail ">
-          <a name="method-i-starts_after_other_ends-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">starts_after_other_ends?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="starts_after_other_ends-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 76</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_after_other_ends?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">starts</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- starts_after_other_ends-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- starts_after_other_ends-3F-method -->
-
-      
-        <div id="starts_as_other_ends-3F-method" class="method-detail ">
-          <a name="method-i-starts_as_other_ends-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">starts_as_other_ends?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="starts_as_other_ends-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 80</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_as_other_ends?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">starts</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">ends</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- starts_as_other_ends-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- starts_as_other_ends-3F-method -->
-
-      
-        <div id="starts_before-3F-method" class="method-detail ">
-          <a name="method-i-starts_before-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">starts_before?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <pre>#</pre>
-
-<p>single <a href="RelativeTime.html">RelativeTime</a> comparators            
-#</p>
-
-<pre>#</pre>
-            
-
-            
-            <div class="method-source-code" id="starts_before-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 27</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_before?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">starts</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- starts_before-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- starts_before-3F-method -->
-
-      
-        <div id="starts_before_or_with-3F-method" class="method-detail ">
-          <a name="method-i-starts_before_or_with-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">starts_before_or_with?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="starts_before_or_with-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 44</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_before_or_with?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">starts</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- starts_before_or_with-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- starts_before_or_with-3F-method -->
-
-      
-        <div id="starts_on_or_after-3F-method" class="method-detail ">
-          <a name="method-i-starts_on_or_after-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">starts_on_or_after?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="starts_on_or_after-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 35</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_on_or_after?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">starts</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- starts_on_or_after-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- starts_on_or_after-3F-method -->
-
-      
-        <div id="starts_with-3F-method" class="method-detail ">
-          <a name="method-i-starts_with-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">starts_with?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="starts_with-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 40</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_with?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">starts</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">starts</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- starts_with-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- starts_with-3F-method -->
-
-      
-      </div><!-- public-instance-method-details -->
+      <li class="public ">
+  <span class="summary_signature">
     
-    </div><!-- 5Buntitled-5D -->
+      <a href="#ends-instance_method" title="#ends (instance method)">- (Object) <strong>ends</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
   
 
-  </div><!-- documentation -->
+  
+    <span class="summary_desc"><div class='inline'>
+<p>TimeSpan::RelativeTime end time.</p>
+</div></span>
+  
+</li>
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-instance_method" title="#name (instance method)">- (Object) <strong>name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute name.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starts-instance_method" title="#starts (instance method)">- (Object) <strong>starts</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>TimeSpan::RelativeTime start time.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#time_line-instance_method" title="#time_line (instance method)">- (Object) <strong>time_line</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>TimeSpan::TimeLine this TimeSpan is associated with.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%21%3D-instance_method" title="#!= (instance method)">- (Boolean) <strong>!=</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan is not the same as another (on the same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3C-instance_method" title="#&lt; (instance method)">- (Boolean) <strong>&lt;</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan ends before another starts (on the same TimeLine)
+alias for '#ends_before_other_starts'.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3D%3D-instance_method" title="#== (instance method)">- (Boolean) <strong>==</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan is the same as another (on the same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3E-instance_method" title="#&gt; (instance method)">- (Boolean) <strong>&gt;</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan starts after another ends (on the same TimeLine)
+alias for '#starts_after_other_ends'.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#contained_fully_inside%3F-instance_method" title="#contained_fully_inside? (instance method)">- (Boolean) <strong>contained_fully_inside?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan is contained within  another  (on the same
+TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#contained_inside%3F-instance_method" title="#contained_inside? (instance method)">- (Boolean) <strong>contained_inside?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan is contained within another, possibly begining as or
+ends as another  (on the same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#contains%3F-instance_method" title="#contains? (instance method)">- (Boolean) <strong>contains?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan contains within  another  (on the same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#contains_fully%3F-instance_method" title="#contains_fully? (instance method)">- (Boolean) <strong>contains_fully?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan contains another  (on the same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#endpoint_statuses-instance_method" title="#endpoint_statuses (instance method)">- (Object) <strong>endpoint_statuses</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>returns the 'statuses' for the start and end times.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ends_after%3F-instance_method" title="#ends_after? (instance method)">- (Boolean) <strong>ends_after?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan ends after another (on the same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ends_as_other_starts%3F-instance_method" title="#ends_as_other_starts? (instance method)">- (Boolean) <strong>ends_as_other_starts?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan ends at the same time as another starts (on the same
+TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ends_before%3F-instance_method" title="#ends_before? (instance method)">- (Boolean) <strong>ends_before?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan ends before another starts (on the same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ends_before_other_starts%3F-instance_method" title="#ends_before_other_starts? (instance method)">- (Boolean) <strong>ends_before_other_starts?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan ends before another starts (on the same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ends_on_or_after%3F-instance_method" title="#ends_on_or_after? (instance method)">- (Boolean) <strong>ends_on_or_after?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan ends after or at the same time as another (on the
+same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ends_on_or_before%3F-instance_method" title="#ends_on_or_before? (instance method)">- (Boolean) <strong>ends_on_or_before?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan end before or at the same time as another ends (on
+the same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ends_with%3F-instance_method" title="#ends_with? (instance method)">- (Boolean) <strong>ends_with?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan ends at the same time as another (on the same
+TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Boolean) <strong>initialize</strong>(starting_at, ending_at, t_line, nom = &quot;(unnamed)&quot;) </a>
+    
+
+    
+  </span>
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>True if passed arguments are valid to create a TimeSpan.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starts_after%3F-instance_method" title="#starts_after? (instance method)">- (Boolean) <strong>starts_after?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan starts after another (on the same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starts_after_other_ends%3F-instance_method" title="#starts_after_other_ends? (instance method)">- (Boolean) <strong>starts_after_other_ends?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan ends at the same time as another (on the same
+TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starts_as_other_ends%3F-instance_method" title="#starts_as_other_ends? (instance method)">- (Boolean) <strong>starts_as_other_ends?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan starts at the same time as another ends (on the same
+TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starts_before%3F-instance_method" title="#starts_before? (instance method)">- (Boolean) <strong>starts_before?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan starts before another (on the same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starts_before_or_with%3F-instance_method" title="#starts_before_or_with? (instance method)">- (Boolean) <strong>starts_before_or_with?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan starts before or at the same time as another (on the
+same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starts_on_or_after%3F-instance_method" title="#starts_on_or_after? (instance method)">- (Boolean) <strong>starts_on_or_after?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan starts with or after another (on the same TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starts_with%3F-instance_method" title="#starts_with? (instance method)">- (Boolean) <strong>starts_with?</strong>(other_time_span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tests  if one TimeSpan starts at the same time as another (on the same
+TimeLine).</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>initialize</strong>(starting_at, ending_at, t_line, nom = &quot;(unnamed)&quot;) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>True if passed arguments are valid to create a TimeSpan</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>starting_at</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="RelativeTime.html" title="TimeSpan::RelativeTime (class)">TimeSpan::RelativeTime</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>is when the span starts</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ending_at</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="RelativeTime.html" title="TimeSpan::RelativeTime (class)">TimeSpan::RelativeTime</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>is when the spa nends</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>is</span>
+      
+      
+        <span class='type'>(<tt>TimeSpan::TimeLIne</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the associated TimeLine</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>The</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>name of the TimeSpan (Actually any Ruby Object for which
+'#respond_to?(:to_s) == true')</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_starting_at'>starting_at</span><span class='comma'>,</span> <span class='id identifier rubyid_ending_at'>ending_at</span><span class='comma'>,</span> <span class='id identifier rubyid_t_line'>t_line</span><span class='comma'>,</span> <span class='id identifier rubyid_nom'>nom</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>(unnamed)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cannot make a span unless both points are on the same time_line</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span>  <span class='id identifier rubyid_starting_at'>starting_at</span><span class='period'>.</span><span class='id identifier rubyid_colinear_with?'>colinear_with?</span><span class='lparen'>(</span><span class='id identifier rubyid_ending_at'>ending_at</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_starts'>starts</span>           <span class='op'>=</span> <span class='id identifier rubyid_starting_at'>starting_at</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ends'>ends</span>             <span class='op'>=</span> <span class='id identifier rubyid_ending_at'>ending_at</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_time_line'>time_line</span>        <span class='op'>=</span> <span class='id identifier rubyid_t_line'>t_line</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_time_line'>time_line</span><span class='period'>.</span><span class='id identifier rubyid_spans'>spans</span>  <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>             <span class='op'>=</span> <span class='id identifier rubyid_nom'>nom</span>
+  <span class='id identifier rubyid_starting_at'>starting_at</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>RelativeTime</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_ending_at'>ending_at</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>RelativeTime</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id identifier rubyid_starting_at'>starting_at</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_ending_at'>ending_at</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="ends=-instance_method"></span>
+      <span id="ends-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="ends-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ends</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>TimeSpan::RelativeTime end time</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ends'>ends</span>
+  <span class='ivar'>@ends</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="name=-instance_method"></span>
+      <span id="name-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>name</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute name</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
+  <span class='ivar'>@name</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="starts=-instance_method"></span>
+      <span id="starts-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="starts-instance_method">
+  
+    - (<tt>Object</tt>) <strong>starts</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>TimeSpan::RelativeTime start time</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 13</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_starts'>starts</span>
+  <span class='ivar'>@starts</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="time_line=-instance_method"></span>
+      <span id="time_line-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="time_line-instance_method">
+  
+    - (<tt>Object</tt>) <strong>time_line</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>TimeSpan::TimeLine this TimeSpan is associated with</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 17</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_time_line'>time_line</span>
+  <span class='ivar'>@time_line</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
-</body>
-</html>
 
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="!=-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>!=</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan is not the same as another (on the same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if not same as the other</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+165
+166
+167</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 165</span>
+
+<span class='kw'>def</span> <span class='op'>!=</span> <span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='op'>!</span><span class='id identifier rubyid_end_with'>end_with</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='op'>!</span><span class='id identifier rubyid_starts_with'>starts_with</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="<-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>&lt;</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan ends before another starts (on the same TimeLine)
+alias for '#ends_before_other_starts'</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self ends before another starts</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+173
+174
+175</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 173</span>
+
+<span class='kw'>def</span> <span class='op'>&lt;</span> <span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ends_before_other_starts?'>ends_before_other_starts?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="==-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>==</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan is the same as another (on the same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if same as the other</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+158
+159
+160</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 158</span>
+
+<span class='kw'>def</span> <span class='op'>==</span> <span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ends_with?'>ends_with?</span><span class='lparen'>(</span><span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_starts_with?'>starts_with?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id=">-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>&gt;</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan starts after another ends (on the same TimeLine)
+alias for '#starts_after_other_ends'</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self starts after another ends</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+181
+182
+183</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 181</span>
+
+<span class='kw'>def</span> <span class='op'>&gt;</span> <span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_starts_after_other_ends?'>starts_after_other_ends?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="contained_fully_inside?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>contained_fully_inside?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan is contained within  another  (on the same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self contained inside another</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+188
+189
+190</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 188</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_contained_fully_inside?'>contained_fully_inside?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_starts_after?'>starts_after?</span><span class='lparen'>(</span><span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_ends_before?'>ends_before?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="contained_inside?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>contained_inside?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan is contained within another, possibly begining as or
+ends as another  (on the same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self contained inside another, including same endpoints</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+195
+196
+197</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 195</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_contained_inside?'>contained_inside?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_starts_on_or_after?'>starts_on_or_after?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_ends_on_or_before?'>ends_on_or_before?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="contains?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>contains?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan contains within  another  (on the same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self contains another</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+209
+210
+211</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 209</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_contains?'>contains?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_starts_before_or_with?'>starts_before_or_with?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_ends_on_or_after?'>ends_on_or_after?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="contains_fully?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>contains_fully?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan contains another  (on the same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self contains another</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+202
+203
+204</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 202</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_contains_fully?'>contains_fully?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_starts_before?'>starts_before?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_ends_after?'>ends_after?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="endpoint_statuses-instance_method">
+  
+    - (<tt>Object</tt>) <strong>endpoint_statuses</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>returns the 'statuses' for the start and end times</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>start and end time statuses in a hash with key is self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_endpoint_statuses'>endpoint_statuses</span>
+  <span class='lbrace'>{</span><span class='kw'>self</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_starts'>starts</span><span class='period'>.</span><span class='id identifier rubyid_reference_to'>reference_to</span><span class='comma'>,</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ends'>ends</span><span class='period'>.</span><span class='id identifier rubyid_reference_to'>reference_to</span><span class='rbracket'>]</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ends_after?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ends_after?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan ends after another (on the same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self ends after another time_span ends</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+106
+107
+108</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 106</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ends_after?'>ends_after?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ends'>ends</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_ends'>ends</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ends_as_other_starts?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ends_as_other_starts?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan ends at the same time as another starts (on the same
+TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self ends at the same time as another time_span starts (no gap)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+127
+128
+129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 127</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ends_as_other_starts?'>ends_as_other_starts?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ends'>ends</span> <span class='op'>==</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_starts'>starts</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ends_before?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ends_before?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan ends before another starts (on the same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self ends before another time_span starts</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 85</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ends_before?'>ends_before?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ends'>ends</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_ends'>ends</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ends_before_other_starts?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ends_before_other_starts?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan ends before another starts (on the same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self ends before another time_span starts</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+120
+121
+122</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 120</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ends_before_other_starts?'>ends_before_other_starts?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ends'>ends</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_starts'>starts</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ends_on_or_after?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ends_on_or_after?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan ends after or at the same time as another (on the
+same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self ends after or at the same time as another time_span ends</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+99
+100
+101</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 99</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ends_on_or_after?'>ends_on_or_after?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ends'>ends</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_ends'>ends</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ends_on_or_before?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ends_on_or_before?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan end before or at the same time as another ends (on
+the same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self ends before or at the same time as another time_span ends</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+92
+93
+94</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 92</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ends_on_or_before?'>ends_on_or_before?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ends'>ends</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_ends'>ends</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ends_with?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ends_with?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan ends at the same time as another (on the same
+TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self ends at the same time as another time_span ends</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+113
+114
+115</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 113</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ends_with?'>ends_with?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ends'>ends</span> <span class='op'>==</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_ends'>ends</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="starts_after?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>starts_after?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan starts after another (on the same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self starts after other_time_span starts</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+57
+58
+59</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 57</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_starts_after?'>starts_after?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_starts'>starts</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_starts'>starts</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="starts_after_other_ends?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>starts_after_other_ends?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan ends at the same time as another (on the same
+TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self ends at the same time as another time_span ends</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+134
+135
+136</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 134</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_starts_after_other_ends?'>starts_after_other_ends?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_starts'>starts</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_ends'>ends</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="starts_as_other_ends?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>starts_as_other_ends?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan starts at the same time as another ends (on the same
+TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self starts at the same time as another time_span ends</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+141
+142
+143</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 141</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_starts_as_other_ends?'>starts_as_other_ends?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_starts'>starts</span> <span class='op'>==</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_ends'>ends</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="starts_before?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>starts_before?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan starts before another (on the same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self starts before b starts</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_starts_before?'>starts_before?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_starts'>starts</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_starts'>starts</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="starts_before_or_with?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>starts_before_or_with?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan starts before or at the same time as another (on the
+same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self starts before or at the same time as other_time_span starts</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 78</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_starts_before_or_with?'>starts_before_or_with?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_starts'>starts</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_starts'>starts</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="starts_on_or_after?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>starts_on_or_after?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan starts with or after another (on the same TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self starts on or after other_time_span starts</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_starts_on_or_after?'>starts_on_or_after?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_starts'>starts</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_starts'>starts</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="starts_with?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>starts_with?</strong>(other_time_span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>tests  if one TimeSpan starts at the same time as another (on the same
+TimeLine)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_time_span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::TimeSpan (class)">TimeSpan::TimeSpan</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the TimeSpan being compared to self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self starts at the same time as other_time_span starts</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_starts_with?'>starts_with?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_starts'>starts</span> <span class='op'>==</span> <span class='id identifier rubyid_other_time_span'>other_time_span</span><span class='period'>.</span><span class='id identifier rubyid_starts'>starts</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Mar  2 13:34:25 2012 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.5 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

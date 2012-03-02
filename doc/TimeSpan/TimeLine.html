@@ -1,638 +1,1801 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: TimeSpan::TimeLine
+  
+    &mdash; Documentation by YARD 0.7.5
+  
+</title>
 
-  <title>Class: TimeSpan::TimeLine</title>
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
 
-  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
 
-</head>
-<body id="top" class="class">
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../index.html">Home</a>
-          <a href="../index.html#classes">Classes</a>
-          <a href="../index.html#methods">Methods</a>
-        </h3>
-      </div>
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (T)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../TimeSpan.html" title="TimeSpan (module)">TimeSpan</a></span></span>
+     &raquo; 
+    <span class="title">TimeLine</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
     </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: TimeSpan::TimeLine
+  
+  
+  
+</h1>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../lib/time_span_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/time_span.rb">lib/time_span.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
-
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Array</span>
       
-    </div>
-
-    <div id="class-metadata">
-      
-      <!-- Parent Class -->
-      <div id="parent-class-section" class="section">
-        <h3 class="section-header">Parent</h3>
-        
-        <p class="link">Array</p>
-        
-      </div>
-      
-
-      
-
-      
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
+        <ul class="fullTree">
+          <li>Object</li>
           
-          <li><a href="#method-c-new">::new</a></li>
+            <li class="next">Array</li>
           
-          <li><a href="#method-i-append">#append</a></li>
-          
-          <li><a href="#method-i-append_to_next">#append_to_next</a></li>
-          
-          <li><a href="#method-i-compress-21">#compress!</a></li>
-          
-          <li><a href="#method-i-increase_after">#increase_after</a></li>
-          
-          <li><a href="#method-i-insert_at">#insert_at</a></li>
-          
-          <li><a href="#method-i-insert_before_next">#insert_before_next</a></li>
-          
-          <li><a href="#method-i-position_of">#position_of</a></li>
-          
-          <li><a href="#method-i-remove">#remove</a></li>
-          
-          <li><a href="#method-i-to_s">#to_s</a></li>
+            <li class="next">TimeSpan::TimeLine</li>
           
         </ul>
-      </div>
+        <a href="#" class="inheritanceTree">show all</a>
       
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/time_span.rb</dd>
+  
+</dl>
+<div class="clear"></div>
 
-      
-    </div>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>class TimeLine                                                             
+#</p>
 
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../Gemfile.html">Gemfile</a></li>
-        
-          <li class="file"><a href="../Rakefile.html">Rakefile</a></li>
-        
-        </ul>
-      </div>
-      
+<pre class="code ruby"><code>                                                                                                   #
+TimeLine is how RelativeTime objects are related to each other, they have to have the same         #
+  frame of reference.                                                                              #
+                                                                                                   #
+instance methods:                                                                                  #
+                                                                                                   #
+  to_s  -- convenience method to see which object we have                                          #
+  position_of(obj) -- its location on the TimeLine                                                 #
+  increase_after(position, amount) -- make room in the index for an insertion                      #
+  append (obj)  -- add obj to end of the TimeLine                                                  #
+  append_to_next(relative_object, object, relative) at relative offset to relative_object, put obj #
+  insert_before_next(relative_object, object, relative) inserts into new time slot relative to relative_object
+  insert_at(position, object) -- places object at position, appending if equal time exists         #
+  remove(obj) -- remove object from the TimeLine                                                   #
+  compress! -- compresses the TimeLine, removing [] and adjusting the index accordingly            #
+                                                                                                   #</code></pre>
 
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
 
-        <ul class="link-list">
-        
-          <li><a href="../TimeSpan.html">TimeSpan</a></li>
-        
-          <li><a href="../TimeSpan/RelativeTime.html">TimeSpan::RelativeTime</a></li>
-        
-          <li><a href="../TimeSpan/TimeLine.html">TimeSpan::TimeLine</a></li>
-        
-          <li><a href="../TimeSpan/TimeSpan.html">TimeSpan::TimeSpan</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
   </div>
-
-  <div id="documentation">
-    <h1 class="class">TimeSpan::TimeLine</h1>
-
-    <div id="description" class="description">
+</div>
+<div class="tags">
+  
+<h3>Author:</h3>
+<ul class="author">
+  
+    <li>
       
-<p>class <a href="TimeLine.html">TimeLine</a>                                 
-#</p>
-
-<pre>#</pre>
-
-<p><a href="TimeLine.html">TimeLine</a> is how <a
-href="RelativeTime.html">RelativeTime</a> objects are related to each
-other, they have to have the same         #</p>
-
-<pre>frame of reference.                                                                              #
-                                                                                                 #</pre>
-
-<p>instance methods:                                                          
-#</p>
-
-<pre>                                                                                                 #
-to_s  -- convenience method to see which object we have                                          #
-position_of(obj) -- its location on the TimeLine                                                 #
-increase_after(position, amount) -- make room in the index for an insertion                      #
-append (obj)  -- add obj to end of the TimeLine                                                  #
-append_to_next(relative_object, object, relative) at relative offset to relative_object, put obj #
-insert_before_next(relative_object, object, relative) inserts into new time slot relative to relative_object
-insert_at(position, object) -- places object at position, appending if equal time exists         #
-remove(obj) -- remove object from the TimeLine                                                   #
-compress! -- compresses the TimeLine, removing [] and adjusting the index accordingly            #
-                                                                                                 #</pre>
-
-    </div><!-- description -->
-
-    
-    
-    
-    <div id="5Buntitled-5D" class="documentation-section">
       
-
       
-
       
-
-      
-      <!-- Attributes -->
-      <div id="attribute-method-details" class="method-section section">
-        <h3 class="section-header">Attributes</h3>
-
         
-        <div id="indices_of-attribute-method" class="method-detail">
-          <a name="indices_of"></a>
-          
-          <a name="indices_of="></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">indices_of</span><span
-              class="attribute-access-type">[RW]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
-        
-        <div id="line-attribute-method" class="method-detail">
-          <a name="line"></a>
-          
-          <a name="line="></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">line</span><span
-              class="attribute-access-type">[RW]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
-        
-        <div id="name-attribute-method" class="method-detail">
-          <a name="name"></a>
-          
-          <a name="name="></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">name</span><span
-              class="attribute-access-type">[RW]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
-        
-      </div><!-- attribute-method-details -->
+        <div class='inline'>
+<p>Craig A. .Cook</p>
+</div>
       
+    </li>
+  
+</ul>
 
-      <!-- Methods -->
-      
-      <div id="public-class-method-details" class="method-section section">
-        <h3 class="section-header">Public Class Methods</h3>
+</div>
 
-      
-        <div id="new-method" class="method-detail ">
-          <a name="method-c-new"></a>
 
-          
-          <div class="method-heading">
-            <span class="method-name">new</span><span
-              class="method-args">(name="")</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
 
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="new-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 156</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>=<span class="ruby-string">&quot;&quot;</span>)
-  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
-  <span class="ruby-ivar">@line</span> = []
-  <span class="ruby-ivar">@indices_of</span> = {}
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- new-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- new-method -->
-
-      
-      </div><!-- public-class-method-details -->
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
     
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
-
-      
-        <div id="append-method" class="method-detail ">
-          <a name="method-i-append"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">append</span><span
-              class="method-args">(obj)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>add to the  end of the <a href="TimeLine.html">TimeLine</a></p>
-            
-
-            
-            <div class="method-source-code" id="append-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 177</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">append</span>(<span class="ruby-identifier">obj</span>)
-  <span class="ruby-identifier">insert_at</span>(<span class="ruby-ivar">@line</span>.<span class="ruby-identifier">size</span>, <span class="ruby-identifier">obj</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- append-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- append-method -->
-
-      
-        <div id="append_to_next-method" class="method-detail ">
-          <a name="method-i-append_to_next"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">append_to_next</span><span
-              class="method-args">(relative_obj, obj, relative=1)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>inserts to the end of the relative object’s time, becoming equal with it</p>
-            
-
-            
-            <div class="method-source-code" id="append_to_next-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 182</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">append_to_next</span>(<span class="ruby-identifier">relative_obj</span>, <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">relative</span>=<span class="ruby-value">1</span>)
-  <span class="ruby-identifier">insert_at</span>(<span class="ruby-identifier">position_of</span>(<span class="ruby-identifier">relative_obj</span>)<span class="ruby-operator">+</span><span class="ruby-identifier">relative</span>, <span class="ruby-identifier">obj</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- append_to_next-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- append_to_next-method -->
-
-      
-        <div id="compress-21-method" class="method-detail ">
-          <a name="method-i-compress-21"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">compress!</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>removes all [] elements, and decrements accordingly the @<a
-href="TimeLine.html#attribute-i-indices_of">indices_of</a></p>
-
-<pre>ideally this should be transactional</pre>
-            
-
-            
-            <div class="method-source-code" id="compress-21-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 219</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">compress!</span>
-  <span class="ruby-identifier">mod_level</span> = <span class="ruby-value">0</span>
-  <span class="ruby-identifier">offsets</span> = []
-  <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">line</span>.<span class="ruby-identifier">size</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">mod_level</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">empty?</span>
-    <span class="ruby-identifier">offsets</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">mod_level</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-comment">## poor man's transaction.  Don't do directly on indices_of so less chance of interruption</span>
-  <span class="ruby-identifier">indices</span> = <span class="ruby-identifier">indices_of</span>
-  <span class="ruby-identifier">indices</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">indices</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">indices</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">offsets</span>[<span class="ruby-identifier">indices</span>[<span class="ruby-identifier">key</span>]]
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">indices_of</span> = <span class="ruby-identifier">indices</span>
-  <span class="ruby-ivar">@line</span>.<span class="ruby-identifier">delete</span>([])
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- compress-21-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- compress-21-method -->
-
-      
-        <div id="increase_after-method" class="method-detail ">
-          <a name="method-i-increase_after"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">increase_after</span><span
-              class="method-args">(pos, by=1)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="increase_after-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 168</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">increase_after</span>(<span class="ruby-identifier">pos</span>, <span class="ruby-identifier">by</span>=<span class="ruby-value">1</span>)
-  <span class="ruby-ivar">@indices_of</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
-    <span class="ruby-ivar">@indices_of</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">by</span> <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@indices_of</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">pos</span>)
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- increase_after-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- increase_after-method -->
-
-      
-        <div id="insert_at-method" class="method-detail ">
-          <a name="method-i-insert_at"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">insert_at</span><span
-              class="method-args">(pos, obj)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>place obj at the numbered position</p>
-            
-
-            
-            <div class="method-source-code" id="insert_at-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 195</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">insert_at</span>(<span class="ruby-identifier">pos</span>, <span class="ruby-identifier">obj</span>)
-  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;can only add a time to its own timeline&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">equal?</span> <span class="ruby-keyword">self</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">pos</span>].<span class="ruby-identifier">nil?</span>
-    <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">pos</span>] = [<span class="ruby-identifier">obj</span>]
-  <span class="ruby-keyword">else</span>
-    <span class="ruby-identifier">op</span> = <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">pos</span>].<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-string">'&lt;&lt;'</span>  <span class="ruby-operator">:</span> <span class="ruby-string">'='</span>
-    <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">pos</span>].<span class="ruby-identifier">send</span>(<span class="ruby-identifier">op</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">obj</span>).<span class="ruby-identifier">uniq!</span>                <span class="ruby-comment"># no duplicates in same position</span>
-    <span class="ruby-comment"># dup in diff position overwrites below</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-ivar">@indices_of</span>[<span class="ruby-identifier">obj</span>] = <span class="ruby-identifier">pos</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- insert_at-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- insert_at-method -->
-
-      
-        <div id="insert_before_next-method" class="method-detail ">
-          <a name="method-i-insert_before_next"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">insert_before_next</span><span
-              class="method-args">(relative_obj, obj, relative_offset=1)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>inserts into a new space before the relative object (first parameter)</p>
-            
-
-            
-            <div class="method-source-code" id="insert_before_next-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 187</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">insert_before_next</span>(<span class="ruby-identifier">relative_obj</span>, <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">relative_offset</span>=<span class="ruby-value">1</span>)
-  <span class="ruby-identifier">relative_position</span> = <span class="ruby-identifier">position_of</span>(<span class="ruby-identifier">relative_obj</span>)
-  <span class="ruby-identifier">increase_after</span>(<span class="ruby-identifier">relative_position</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">relative_offset</span>, <span class="ruby-identifier">relative_offset</span>)
-  <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">relative_position</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">relative_offset</span>,<span class="ruby-value">0</span>] = <span class="ruby-keyword">nil</span>
-  <span class="ruby-identifier">insert_at</span>(<span class="ruby-identifier">relative_position</span><span class="ruby-operator">+</span><span class="ruby-identifier">relative_offset</span>, <span class="ruby-identifier">obj</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- insert_before_next-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- insert_before_next-method -->
-
-      
-        <div id="position_of-method" class="method-detail ">
-          <a name="method-i-position_of"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">position_of</span><span
-              class="method-args">(obj)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>indices methods</p>
-            
-
-            
-            <div class="method-source-code" id="position_of-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 164</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">position_of</span>(<span class="ruby-identifier">obj</span>)
-  <span class="ruby-ivar">@indices_of</span>[<span class="ruby-identifier">obj</span>]
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- position_of-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- position_of-method -->
-
-      
-        <div id="remove-method" class="method-detail ">
-          <a name="method-i-remove"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">remove</span><span
-              class="method-args">(obj)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>cannot remove [] or the @<a
-href="TimeLine.html#attribute-i-indices_of">indices_of</a> will be wrong
-call  compress to remove the extra []s</p>
-            
-
-            
-            <div class="method-source-code" id="remove-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 209</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove</span>(<span class="ruby-identifier">obj</span>)
-  <span class="ruby-identifier">pos</span> =  <span class="ruby-identifier">position_of</span>(<span class="ruby-identifier">obj</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pos</span>                        <span class="ruby-comment"># do nothing if it isn't there'</span>
-    <span class="ruby-ivar">@line</span>[<span class="ruby-identifier">pos</span>].<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">obj</span>)      <span class="ruby-comment">#  remove from list</span>
-    <span class="ruby-ivar">@indices_of</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">obj</span>)     <span class="ruby-comment">#  remove from index</span>
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- remove-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- remove-method -->
-
-      
-        <div id="to_s-method" class="method-detail ">
-          <a name="method-i-to_s"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">to_s</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="to_s-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 152</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
-  <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- to_s-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- to_s-method -->
-
-      
-      </div><!-- public-instance-method-details -->
+      <li class="public ">
+  <span class="summary_signature">
     
-    </div><!-- 5Buntitled-5D -->
+      <a href="#indices_of-instance_method" title="#indices_of (instance method)">- (Object) <strong>indices_of</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
   
 
-  </div><!-- documentation -->
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute indices_of.</p>
+</div></span>
+  
+</li>
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#line-instance_method" title="#line (instance method)">- (Object) <strong>line</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute line.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-instance_method" title="#name (instance method)">- (Object) <strong>name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute name.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#spans-instance_method" title="#spans (instance method)">- (Object) <strong>spans</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute spans.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#all_endpoint_statuses-instance_method" title="#all_endpoint_statuses (instance method)">- (Array) <strong>all_endpoint_statuses</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Endpoint statuses for all TimeSpan s on the TimeLine.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#all_relative_time_statuses-instance_method" title="#all_relative_time_statuses (instance method)">- (Array) <strong>all_relative_time_statuses</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>all statuses on the TimeLine.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#append-instance_method" title="#append (instance method)">- (Fixnum) <strong>append</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>add to the  end of the TimeLine.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#append_to_next-instance_method" title="#append_to_next (instance method)">- (Fixnum) <strong>append_to_next</strong>(relative_obj, obj, relative = 1) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>inserts to the end of the relative object's time, becoming equal with it.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compress%21-instance_method" title="#compress! (instance method)">- (nil) <strong>compress!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>removes all [] elements, and decrements accordingly the @indices_of.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#increase_after-instance_method" title="#increase_after (instance method)">- (Object) <strong>increase_after</strong>(pos, by = 1) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>bump up indices after a point, so that a RelativeTime may be inserted.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (TimeLine) <strong>initialize</strong>(name = &quot;&quot;) </a>
+    
+
+    
+  </span>
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of TimeLine.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#insert_at-instance_method" title="#insert_at (instance method)">- (Fixnum) <strong>insert_at</strong>(pos, obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>place obj at the numbered position.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#insert_before_next-instance_method" title="#insert_before_next (instance method)">- (Fixnum) <strong>insert_before_next</strong>(relative_obj, obj, relative_offset = 1) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>inserts into a new space before the relative object (first parameter)
+inserts obj before relative_obj by offset.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect-instance_method" title="#inspect (instance method)">- (String) <strong>inspect</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>endpoint statuses for all TimeSpans on the TimeLine, plus TimeLine name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#position_of-instance_method" title="#position_of (instance method)">- (Fixnum) <strong>position_of</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>find the position of a RelativeTime on the TimeLine.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#relative_times-instance_method" title="#relative_times (instance method)">- (Array) <strong>relative_times</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>attached times only (internal API).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove-instance_method" title="#remove (instance method)">- (Object) <strong>remove</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>cannot remove [] or the @indices_of will be wrong call  #compress to remove
+the extra []s.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (String) <strong>to_s</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>returns the TimeLine's name.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="TimeSpan::TimeLine (class)">TimeLine</a></span></tt>) <strong>initialize</strong>(name = &quot;&quot;) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>A new instance of TimeLine</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+241
+242
+243
+244
+245
+246</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 241</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='ivar'>@name</span> <span class='op'>=</span> <span class='id identifier rubyid_name'>name</span>
+  <span class='ivar'>@line</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='ivar'>@indices_of</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='ivar'>@spans</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="indices_of=-instance_method"></span>
+      <span id="indices_of-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="indices_of-instance_method">
+  
+    - (<tt>Object</tt>) <strong>indices_of</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute indices_of</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+238
+239
+240</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 238</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_indices_of'>indices_of</span>
+  <span class='ivar'>@indices_of</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="line=-instance_method"></span>
+      <span id="line-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="line-instance_method">
+  
+    - (<tt>Object</tt>) <strong>line</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute line</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+238
+239
+240</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 238</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_line'>line</span>
+  <span class='ivar'>@line</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="name=-instance_method"></span>
+      <span id="name-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>name</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute name</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+238
+239
+240</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 238</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
+  <span class='ivar'>@name</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="spans=-instance_method"></span>
+      <span id="spans-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="spans-instance_method">
+  
+    - (<tt>Object</tt>) <strong>spans</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute spans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+238
+239
+240</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 238</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_spans'>spans</span>
+  <span class='ivar'>@spans</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
-</body>
-</html>
 
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="all_endpoint_statuses-instance_method">
+  
+    - (<tt>Array</tt>) <strong>all_endpoint_statuses</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Endpoint statuses for all TimeSpan s on the TimeLine</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>endpoint statuses for all TimeSpan s on the TimeLine</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+261
+262
+263</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 261</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_all_endpoint_statuses'>all_endpoint_statuses</span>
+  <span class='id identifier rubyid_spans'>spans</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_acc'>acc</span><span class='comma'>,</span> <span class='id identifier rubyid_span'>span</span><span class='op'>|</span> <span class='id identifier rubyid_acc'>acc</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='id identifier rubyid_span'>span</span><span class='period'>.</span><span class='id identifier rubyid_endpoint_statuses'>endpoint_statuses</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="all_relative_time_statuses-instance_method">
+  
+    - (<tt>Array</tt>) <strong>all_relative_time_statuses</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>all statuses on the TimeLine</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>statuses for all attached RelativeTime s on the TimeLine</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+273
+274
+275</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 273</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_all_relative_time_statuses'>all_relative_time_statuses</span>
+  <span class='id identifier rubyid_relative_times'>relative_times</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_acc'>acc</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='id identifier rubyid_acc'>acc</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_reference_to'>reference_to</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="append-instance_method">
+  
+    - (<tt>Fixnum</tt>) <strong>append</strong>(obj) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>add to the  end of the TimeLine</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>obj</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>object to be inserted into the TimeLine</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>]the (relative) position where the object was inserted</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+298
+299
+300</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 298</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_append'>append</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_insert_at'>insert_at</span><span class='lparen'>(</span><span class='ivar'>@line</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="append_to_next-instance_method">
+  
+    - (<tt>Fixnum</tt>) <strong>append_to_next</strong>(relative_obj, obj, relative = 1) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>inserts to the end of the relative object's time, becoming equal with it</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>relative_obj</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>object after which to insert  obj</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>obj</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>object inserted after relative_object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>]the (relative) position where the object was inserted</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+306
+307
+308</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 306</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_append_to_next'>append_to_next</span><span class='lparen'>(</span><span class='id identifier rubyid_relative_obj'>relative_obj</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='comma'>,</span> <span class='id identifier rubyid_relative'>relative</span><span class='op'>=</span><span class='int'>1</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_insert_at'>insert_at</span><span class='lparen'>(</span><span class='id identifier rubyid_position_of'>position_of</span><span class='lparen'>(</span><span class='id identifier rubyid_relative_obj'>relative_obj</span><span class='rparen'>)</span><span class='op'>+</span><span class='id identifier rubyid_relative'>relative</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="compress!-instance_method">
+  
+    - (<tt>nil</tt>) <strong>compress!</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>removes all [] elements, and decrements accordingly the @indices_of</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_ideally'>ideally</span> <span class='id identifier rubyid_this'>this</span> <span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be'>be</span> <span class='id identifier rubyid_transactional'>transactional</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>cleanup method</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 353</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compress!'>compress!</span>
+  <span class='id identifier rubyid_mod_level'>mod_level</span> <span class='op'>=</span> <span class='int'>0</span>
+  <span class='id identifier rubyid_offsets'>offsets</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='int'>0</span><span class='period'>.</span><span class='id identifier rubyid_upto'>upto</span><span class='lparen'>(</span><span class='id identifier rubyid_line'>line</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_mod_level'>mod_level</span> <span class='op'>-=</span> <span class='int'>1</span> <span class='kw'>if</span> <span class='ivar'>@line</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='id identifier rubyid_offsets'>offsets</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_mod_level'>mod_level</span>
+  <span class='kw'>end</span>
+  <span class='comment'>## poor man's transaction.  Don't do directly on indices_of so less chance of interruption
+</span>  <span class='id identifier rubyid_indices'>indices</span> <span class='op'>=</span> <span class='id identifier rubyid_indices_of'>indices_of</span>
+  <span class='id identifier rubyid_indices'>indices</span><span class='period'>.</span><span class='id identifier rubyid_each_key'>each_key</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='op'>|</span>
+    <span class='id identifier rubyid_indices'>indices</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_indices'>indices</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_offsets'>offsets</span><span class='lbracket'>[</span><span class='id identifier rubyid_indices'>indices</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_indices_of'>indices_of</span> <span class='op'>=</span> <span class='id identifier rubyid_indices'>indices</span>
+  <span class='ivar'>@line</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="increase_after-instance_method">
+  
+    - (<tt>Object</tt>) <strong>increase_after</strong>(pos, by = 1) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>bump up indices after a point, so that a RelativeTime may be inserted</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil  no return value, helper method to keep data structures up to date.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+287
+288
+289
+290
+291</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 287</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_increase_after'>increase_after</span><span class='lparen'>(</span><span class='id identifier rubyid_pos'>pos</span><span class='comma'>,</span> <span class='id identifier rubyid_by'>by</span><span class='op'>=</span><span class='int'>1</span><span class='rparen'>)</span>
+  <span class='ivar'>@indices_of</span><span class='period'>.</span><span class='id identifier rubyid_each_key'>each_key</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='op'>|</span>
+    <span class='ivar'>@indices_of</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span> <span class='op'>+=</span> <span class='id identifier rubyid_by'>by</span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='ivar'>@indices_of</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_pos'>pos</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="insert_at-instance_method">
+  
+    - (<tt>Fixnum</tt>) <strong>insert_at</strong>(pos, obj) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>place obj at the numbered position</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>pos</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>where to insert obj in the TimeLIne</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>obj</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>obj inserted into the TimeLIne</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>]the (relative) position where the object was inserted</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 326</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_insert_at'>insert_at</span><span class='lparen'>(</span><span class='id identifier rubyid_pos'>pos</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>can only add a time to its own time_line</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_time_line'>time_line</span><span class='period'>.</span><span class='id identifier rubyid_equal?'>equal?</span> <span class='kw'>self</span>
+  <span class='kw'>if</span> <span class='ivar'>@line</span><span class='lbracket'>[</span><span class='id identifier rubyid_pos'>pos</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='ivar'>@line</span><span class='lbracket'>[</span><span class='id identifier rubyid_pos'>pos</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_obj'>obj</span><span class='rbracket'>]</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_op'>op</span> <span class='op'>=</span> <span class='ivar'>@line</span><span class='lbracket'>[</span><span class='id identifier rubyid_pos'>pos</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>&lt;&lt;</span><span class='tstring_end'>'</span></span>  <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>=</span><span class='tstring_end'>'</span></span>
+    <span class='ivar'>@line</span><span class='lbracket'>[</span><span class='id identifier rubyid_pos'>pos</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_uniq!'>uniq!</span>                <span class='comment'># no duplicates in same position
+</span>    <span class='comment'># dup in diff position overwrites below
+</span>  <span class='kw'>end</span>
+  <span class='ivar'>@indices_of</span><span class='lbracket'>[</span><span class='id identifier rubyid_obj'>obj</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_pos'>pos</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="insert_before_next-instance_method">
+  
+    - (<tt>Fixnum</tt>) <strong>insert_before_next</strong>(relative_obj, obj, relative_offset = 1) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>inserts into a new space before the relative object (first parameter)
+inserts obj before relative_obj by offset</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>relative_obj</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>object for computing position where obj is inserted</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>the</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>inserted object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>]the (relative) position where the object was inserted</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+315
+316
+317
+318
+319
+320</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 315</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_insert_before_next'>insert_before_next</span><span class='lparen'>(</span><span class='id identifier rubyid_relative_obj'>relative_obj</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='comma'>,</span> <span class='id identifier rubyid_relative_offset'>relative_offset</span><span class='op'>=</span><span class='int'>1</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_relative_position'>relative_position</span> <span class='op'>=</span> <span class='id identifier rubyid_position_of'>position_of</span><span class='lparen'>(</span><span class='id identifier rubyid_relative_obj'>relative_obj</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_increase_after'>increase_after</span><span class='lparen'>(</span><span class='id identifier rubyid_relative_position'>relative_position</span> <span class='op'>+</span> <span class='id identifier rubyid_relative_offset'>relative_offset</span><span class='comma'>,</span> <span class='id identifier rubyid_relative_offset'>relative_offset</span><span class='rparen'>)</span>
+  <span class='ivar'>@line</span><span class='lbracket'>[</span><span class='id identifier rubyid_relative_position'>relative_position</span> <span class='op'>+</span> <span class='id identifier rubyid_relative_offset'>relative_offset</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='id identifier rubyid_insert_at'>insert_at</span><span class='lparen'>(</span><span class='id identifier rubyid_relative_position'>relative_position</span><span class='op'>+</span><span class='id identifier rubyid_relative_offset'>relative_offset</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="inspect-instance_method">
+  
+    - (<tt>String</tt>) <strong>inspect</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>endpoint statuses for all TimeSpans on the TimeLine, plus TimeLine name</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>TimeSpan endpoint statuses + TimeLine name</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+256
+257
+258</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 256</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span>
+  <span class='id identifier rubyid_line'>line</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span> <span class='op'>+</span> <span class='id identifier rubyid_name'>name</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="position_of-instance_method">
+  
+    - (<tt>Fixnum</tt>) <strong>position_of</strong>(obj) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>find the position of a RelativeTime on the TimeLine</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>RelativeTime's position on the TimeLine (self)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+281
+282
+283</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 281</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_position_of'>position_of</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
+  <span class='ivar'>@indices_of</span><span class='lbracket'>[</span><span class='id identifier rubyid_obj'>obj</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="relative_times-instance_method">
+  
+    - (<tt>Array</tt>) <strong>relative_times</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>attached times only (internal API)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>indices of keys</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+267
+268
+269</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 267</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_relative_times'>relative_times</span>
+  <span class='id identifier rubyid_indices_of'>indices_of</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="remove-instance_method">
+  
+    - (<tt>Object</tt>) <strong>remove</strong>(obj) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>cannot remove [] or the @indices_of will be wrong call  #compress to remove
+the extra []s</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>obj</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>object to be removed from the TimeLIne</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><dl class="rdoc-list"><dt>]nil|Fixnum</dt>
+<dd>
+<p>position of deleted object</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+342
+343
+344
+345
+346
+347
+348</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 342</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_pos'>pos</span> <span class='op'>=</span>  <span class='id identifier rubyid_position_of'>position_of</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_pos'>pos</span>                        <span class='comment'># do nothing if it isn't there'
+</span>    <span class='ivar'>@line</span><span class='lbracket'>[</span><span class='id identifier rubyid_pos'>pos</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>      <span class='comment'>#  remove from list
+</span>    <span class='ivar'>@indices_of</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>     <span class='comment'>#  remove from index
+</span>  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="to_s-instance_method">
+  
+    - (<tt>String</tt>) <strong>to_s</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>returns the TimeLine's name</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>TimeLine's name'</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+250
+251
+252</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 250</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Mar  2 13:34:26 2012 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.5 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

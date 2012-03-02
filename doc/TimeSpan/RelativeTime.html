@@ -1,419 +1,736 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: TimeSpan::RelativeTime
+  
+    &mdash; Documentation by YARD 0.7.5
+  
+</title>
 
-  <title>Class: TimeSpan::RelativeTime</title>
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
 
-  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
 
-</head>
-<body id="top" class="class">
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../index.html">Home</a>
-          <a href="../index.html#classes">Classes</a>
-          <a href="../index.html#methods">Methods</a>
-        </h3>
-      </div>
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (R)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../TimeSpan.html" title="TimeSpan (module)">TimeSpan</a></span></span>
+     &raquo; 
+    <span class="title">RelativeTime</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
     </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: TimeSpan::RelativeTime
+  
+  
+  
+</h1>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../lib/time_span_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/time_span.rb">lib/time_span.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
-
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
       
-    </div>
-
-    <div id="class-metadata">
-      
-      <!-- Parent Class -->
-      <div id="parent-class-section" class="section">
-        <h3 class="section-header">Parent</h3>
-        
-        <p class="link">Object</p>
-        
-      </div>
-      
-
-      
-
-      
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
+        <ul class="fullTree">
+          <li>Object</li>
           
-          <li><a href="#method-c-new">::new</a></li>
-          
-          <li><a href="#method-i-colinear_with-3F">#colinear_with?</a></li>
-          
-          <li><a href="#method-i-positioned-3F">#positioned?</a></li>
-          
-          <li><a href="#method-i-to_s">#to_s</a></li>
-          
-          <li><a href="#method-i-valid_and_comparable_with-3F">#valid_and_comparable_with?</a></li>
+            <li class="next">TimeSpan::RelativeTime</li>
           
         </ul>
-      </div>
+        <a href="#" class="inheritanceTree">show all</a>
       
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/time_span.rb</dd>
+  
+</dl>
+<div class="clear"></div>
 
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../Gemfile.html">Gemfile</a></li>
-        
-          <li class="file"><a href="../Rakefile.html">Rakefile</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../TimeSpan.html">TimeSpan</a></li>
-        
-          <li><a href="../TimeSpan/RelativeTime.html">TimeSpan::RelativeTime</a></li>
-        
-          <li><a href="../TimeSpan/TimeLine.html">TimeSpan::TimeLine</a></li>
-        
-          <li><a href="../TimeSpan/TimeSpan.html">TimeSpan::TimeSpan</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
-  </div>
-
-  <div id="documentation">
-    <h1 class="class">TimeSpan::RelativeTime</h1>
-
-    <div id="description" class="description">
-      
-<p>class <a href="RelativeTime.html">RelativeTime</a>                         
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>class RelativeTime                                                         
 #</p>
 
-<pre>#</pre>
+<pre class="code ruby"><code><span class='comment'>#</span></code></pre>
 
 <p>public methods:                                                            
 #</p>
 
-<pre>comparators: &lt; &lt;= == != &gt;= &gt;                                                                      #
+<pre class="code ruby"><code>comparators: &lt; &lt;= == != &gt;= &gt;                                                                      #
    work on any two RelativeTime objects on the same TimeLine                                      #
 positioned?                                                                                       #
    true if a RelativeTime has been put on a TimeLine                                              #                                                                                   #
 colinear_with?(RelativeTime.new)                                                                  #
    true if both RelativeTime objects are positioned and on same TimeLine                          #
-                                                                                                  #</pre>
+                                                                                                  #</code></pre>
 
 <p>protected method:                                                          
 #</p>
 
-<pre>valid_and_comparable_with?(RelativeTime)                                                          #
+<pre class="code ruby"><code>valid_and_comparable_with?(RelativeTime)                                                          #
    true if                                                                                        #
-                                                                                                  #</pre>
+                                                                                                  #</code></pre>
 
 <p>diff cannot be done, it makes no sense, due to the fuzziness               
 #</p>
 
-<pre>                                                                                                   #
-RelativeTime must be within a TimeLine                                                             #</pre>
+<pre class="code ruby"><code>                                                                                                   <span class='comment'>#
+</span><span class='const'>RelativeTime</span> <span class='id identifier rubyid_must'>must</span> <span class='id identifier rubyid_be'>be</span> <span class='id identifier rubyid_within'>within</span> <span class='id identifier rubyid_a'>a</span> <span class='const'>TimeLine</span>                                                             <span class='comment'>#</span></code></pre>
 
-    </div><!-- description -->
 
-    
-    
-    
-    <div id="5Buntitled-5D" class="documentation-section">
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Author:</h3>
+<ul class="author">
+  
+    <li>
       
-
       
-
       
-
       
-      <!-- Attributes -->
-      <div id="attribute-method-details" class="method-section section">
-        <h3 class="section-header">Attributes</h3>
-
         
-        <div id="reference_to-attribute-method" class="method-detail">
-          <a name="reference_to"></a>
-          
-          <a name="reference_to="></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">reference_to</span><span
-              class="attribute-access-type">[RW]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
-        
-        <div id="timeline-attribute-method" class="method-detail">
-          <a name="timeline"></a>
-          
-          <a name="timeline="></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">timeline</span><span
-              class="attribute-access-type">[RW]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
-        
-      </div><!-- attribute-method-details -->
+        <div class='inline'>
+<p>Craig A. Cook</p>
+</div>
       
+    </li>
+  
+</ul>
 
-      <!-- Methods -->
-      
-      <div id="public-class-method-details" class="method-section section">
-        <h3 class="section-header">Public Class Methods</h3>
+</div>
 
-      
-        <div id="new-method" class="method-detail ">
-          <a name="method-c-new"></a>
 
-          
-          <div class="method-heading">
-            <span class="method-name">new</span><span
-              class="method-args">(tline, ref)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
 
-          <div class="method-description">
-            
-            <p>create a realtive time *within a timeline*  after position</p>
-            
-
-            
-            <div class="method-source-code" id="new-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 261</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>  <span class="ruby-identifier">tline</span>, <span class="ruby-identifier">ref</span>
-   <span class="ruby-ivar">@timeline</span>= <span class="ruby-identifier">tline</span>
-   <span class="ruby-ivar">@reference_to</span>= <span class="ruby-identifier">ref</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- new-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- new-method -->
-
-      
-      </div><!-- public-class-method-details -->
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
     
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
-
-      
-        <div id="colinear_with-3F-method" class="method-detail ">
-          <a name="method-i-colinear_with-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">colinear_with?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="colinear_with-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 282</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">colinear_with?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">b</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>) <span class="ruby-operator">&amp;&amp;</span>  <span class="ruby-identifier">b</span>.<span class="ruby-identifier">positioned?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">positioned?</span> <span class="ruby-operator">&amp;&amp;</span>  <span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-identifier">b</span>.<span class="ruby-identifier">timeline</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- colinear_with-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- colinear_with-3F-method -->
-
-      
-        <div id="positioned-3F-method" class="method-detail ">
-          <a name="method-i-positioned-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">positioned?</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="positioned-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 278</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">positioned?</span>
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">timeline</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">indices_of</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-keyword">self</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- positioned-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- positioned-3F-method -->
-
-      
-        <div id="to_s-method" class="method-detail ">
-          <a name="method-i-to_s"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">to_s</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="to_s-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 266</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
-  <span class="ruby-identifier">reference_to</span>.<span class="ruby-identifier">to_s</span>
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- to_s-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- to_s-method -->
-
-      
-      </div><!-- public-instance-method-details -->
+      <li class="public ">
+  <span class="summary_signature">
     
-      <div id="protected-instance-method-details" class="method-section section">
-        <h3 class="section-header">Protected Instance Methods</h3>
-
-      
-        <div id="valid_and_comparable_with-3F-method" class="method-detail ">
-          <a name="method-i-valid_and_comparable_with-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">valid_and_comparable_with?</span><span
-              class="method-args">(b)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="valid_and_comparable_with-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/time_span.rb, line 289</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">valid_and_comparable_with?</span>(<span class="ruby-identifier">b</span>)
-  <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">b</span>.<span class="ruby-identifier">timeline</span>.<span class="ruby-identifier">nil?</span>  <span class="ruby-operator">&amp;&amp;</span>  <span class="ruby-identifier">colinear_with?</span>(<span class="ruby-identifier">b</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- valid_and_comparable_with-3F-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- valid_and_comparable_with-3F-method -->
-
-      
-      </div><!-- protected-instance-method-details -->
+      <a href="#time_line-instance_method" title="#time_line (instance method)">- (Object) <strong>time_line</strong> </a>
     
-    </div><!-- 5Buntitled-5D -->
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
   
 
-  </div><!-- documentation -->
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute time_line.</p>
+</div></span>
+  
+</li>
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#colinear_with%3F-instance_method" title="#colinear_with? (instance method)">- (Boolean) <strong>colinear_with?</strong>(other_relative_time) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>True if both are on the same TimeLine.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Object) <strong>initialize</strong>(tline, ref) </a>
+    
+
+    
+  </span>
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>create a realtive time *within a time_line*  after position.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#meth-instance_method" title="#meth (instance method)">- (Boolean) <strong>meth</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>comparator methods any method on fixnum with 1 RelativeTime param can be in
+the list below.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#positioned%3F-instance_method" title="#positioned? (instance method)">- (Boolean) <strong>positioned?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>True if self has been properly placed on a TimeLine.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (String) <strong>to_s</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The string representation of referenced object.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt>Object</tt>) <strong>initialize</strong>(tline, ref) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>create a realtive time *within a time_line*  after position</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>tline</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="TimeLine.html" title="TimeSpan::TimeLine (class)">TimeSpan::TimeLine</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>TimeLIne on which this RelativeTime is placed</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ref</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the object placed on the timeline</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+401
+402
+403
+404</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 401</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>  <span class='id identifier rubyid_tline'>tline</span><span class='comma'>,</span> <span class='id identifier rubyid_ref'>ref</span>
+   <span class='ivar'>@time_line</span><span class='op'>=</span> <span class='id identifier rubyid_tline'>tline</span>
+   <span class='ivar'>@reference_to</span><span class='op'>=</span> <span class='id identifier rubyid_ref'>ref</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="time_line=-instance_method"></span>
+      <span id="time_line-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="time_line-instance_method">
+  
+    - (<tt>Object</tt>) <strong>time_line</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute time_line</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+394
+395
+396</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 394</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_time_line'>time_line</span>
+  <span class='ivar'>@time_line</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
-</body>
-</html>
 
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="colinear_with?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>colinear_with?</strong>(other_relative_time) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>True if both are on the same TimeLine</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::RelativeTime (class)">TimeSpan::RelativeTime</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>time to be sure is on self's TimeLIne</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if both are on the same TimeLine</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+429
+430
+431</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 429</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_colinear_with?'>colinear_with?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_relative_time'>other_relative_time</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_other_relative_time'>other_relative_time</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span>  <span class='id identifier rubyid_other_relative_time'>other_relative_time</span><span class='period'>.</span><span class='id identifier rubyid_positioned?'>positioned?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_positioned?'>positioned?</span> <span class='op'>&amp;&amp;</span>  <span class='id identifier rubyid_time_line'>time_line</span><span class='period'>.</span><span class='id identifier rubyid_equal?'>equal?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_relative_time'>other_relative_time</span><span class='period'>.</span><span class='id identifier rubyid_time_line'>time_line</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="meth-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>meth</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>comparator methods any method on fixnum with 1 RelativeTime param can be in
+the list below</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other_relative_time</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="TimeSpan::RelativeTime (class)">TimeSpan::RelativeTime</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>time being compared to</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>depending on the relationship</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+415
+416
+417
+418
+419
+420</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 415</span>
+
+<span class='qwords_beg'>%w{</span><span class='tstring_content'>&lt;</span><span class='words_sep'> </span><span class='tstring_content'>&lt;=</span><span class='words_sep'> </span><span class='tstring_content'>==</span><span class='words_sep'> </span><span class='tstring_content'>!=</span><span class='words_sep'> </span><span class='tstring_content'>&gt;=</span><span class='words_sep'> </span><span class='tstring_content'>&gt;</span><span class='words_sep'>}</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_meth'>meth</span><span class='op'>|</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:define_method</span><span class='comma'>,</span> <span class='id identifier rubyid_meth'>meth</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_other_relative_time'>other_relative_time</span><span class='op'>|</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>can only compare to other times on the same time_line.</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_valid_and_comparable_with?'>valid_and_comparable_with?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_relative_time'>other_relative_time</span><span class='rparen'>)</span>     <span class='comment'># can NOT compare across TimeLines
+</span>    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_time_line'>time_line</span><span class='period'>.</span><span class='id identifier rubyid_position_of'>position_of</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_meth'>meth</span><span class='comma'>,</span> <span class='id identifier rubyid_other_relative_time'>other_relative_time</span><span class='period'>.</span><span class='id identifier rubyid_time_line'>time_line</span><span class='period'>.</span><span class='id identifier rubyid_position_of'>position_of</span><span class='lparen'>(</span><span class='id identifier rubyid_other_relative_time'>other_relative_time</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span>
+<span class='rbrace'>}</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="positioned?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>positioned?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>True if self has been properly placed on a TimeLine</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if self has been properly placed on a TimeLine</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+423
+424
+425</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 423</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_positioned?'>positioned?</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_time_line'>time_line</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_time_line'>time_line</span><span class='period'>.</span><span class='id identifier rubyid_indices_of'>indices_of</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="to_s-instance_method">
+  
+    - (<tt>String</tt>) <strong>to_s</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>The string representation of referenced object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the string representation of referenced object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+407
+408
+409</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/time_span.rb', line 407</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='ivar'>@reference_to</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Mar  2 13:34:26 2012 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.5 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>
