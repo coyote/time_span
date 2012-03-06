@@ -32,6 +32,11 @@ module TimeSpan
       starting_at.kind_of?(RelativeTime) && ending_at.kind_of?(RelativeTime) && (starting_at <= ending_at)
     end
 
+    # @raise [NotImplementedError] could create illegal objects by gem rules
+    def clone
+      raise NotImplementedError, "Cannot use base Ruby clone which can create illegal objects by gem rules."
+    end
+
     # returns the 'statuses' for the start and end times
     # @return start and end time statuses in a hash with key is self
     def endpoint_statuses
@@ -44,98 +49,98 @@ module TimeSpan
   #                                                                                                     #
   #######################################################################################################
 
-    # tests  if one TimeSpan starts before another (on the same TimeLine)
+    # tests  if one TimeSpan starts before another (on the same TimeLine -- delegated to RelativeTime)
     # @param [TimeSpan::TimeSpan] other_time_span the TimeSpan being compared to self
     # @return  true if self starts before b starts
     def starts_before?(other_time_span)
       starts < other_time_span.starts
     end
 
-    # tests  if one TimeSpan starts after another (on the same TimeLine)
+    # tests  if one TimeSpan starts after another (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self starts after other_time_span starts
     def starts_after?(other_time_span)
       starts > other_time_span.starts
     end
 
-    # tests  if one TimeSpan starts with or after another (on the same TimeLine)
+    # tests  if one TimeSpan starts with or after another (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self starts on or after other_time_span starts
     def starts_on_or_after?(other_time_span)
       starts >= other_time_span.starts
     end
 
-    # tests  if one TimeSpan starts at the same time as another (on the same TimeLine)
+    # tests  if one TimeSpan starts at the same time as another (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self starts at the same time as other_time_span starts
     def starts_with?(other_time_span)
       starts == other_time_span.starts
     end
 
-    # tests  if one TimeSpan starts before or at the same time as another (on the same TimeLine)
+    # tests  if one TimeSpan starts before or at the same time as another (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self starts before or at the same time as other_time_span starts
     def starts_before_or_with?(other_time_span)
       starts <= other_time_span.starts
     end
 
-    # tests  if one TimeSpan ends before another starts (on the same TimeLine)
+    # tests  if one TimeSpan ends before another starts (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self ends before another time_span starts
     def ends_before?(other_time_span)
       ends < other_time_span.ends
     end
 
-    # tests  if one TimeSpan end before or at the same time as another ends (on the same TimeLine)
+    # tests  if one TimeSpan end before or at the same time as another ends (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self ends before or at the same time as another time_span ends
     def ends_on_or_before?(other_time_span)
       ends <= other_time_span.ends
     end
 
-    # tests  if one TimeSpan ends after or at the same time as another (on the same TimeLine)
+    # tests  if one TimeSpan ends after or at the same time as another (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self ends after or at the same time as another time_span ends
     def ends_on_or_after?(other_time_span)
       ends >= other_time_span.ends
     end
 
-    # tests  if one TimeSpan ends after another (on the same TimeLine)
+    # tests  if one TimeSpan ends after another (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self ends after another time_span ends
     def ends_after?(other_time_span)
       ends > other_time_span.ends
     end
 
-    # tests  if one TimeSpan ends at the same time as another (on the same TimeLine)
+    # tests  if one TimeSpan ends at the same time as another (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self ends at the same time as another time_span ends
     def ends_with?(other_time_span)
       ends == other_time_span.ends
     end
 
-    # tests  if one TimeSpan ends before another starts (on the same TimeLine)
+    # tests  if one TimeSpan ends before another starts (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self ends before another time_span starts
     def ends_before_other_starts?(other_time_span)
       ends < other_time_span.starts
     end
 
-    # tests  if one TimeSpan ends at the same time as another starts (on the same TimeLine)
+    # tests  if one TimeSpan ends at the same time as another starts (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self ends at the same time as another time_span starts (no gap)
     def ends_as_other_starts?(other_time_span)
       ends == other_time_span.starts
     end
 
-    # tests  if one TimeSpan ends at the same time as another (on the same TimeLine)
+    # tests  if one TimeSpan ends at the same time as another (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self ends at the same time as another time_span ends
     def starts_after_other_ends?(other_time_span)
       starts > other_time_span.ends
     end
 
-    # tests  if one TimeSpan starts at the same time as another ends (on the same TimeLine)
+    # tests  if one TimeSpan starts at the same time as another ends (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self starts at the same time as another time_span ends
     def starts_as_other_ends?(other_time_span)
@@ -152,21 +157,21 @@ module TimeSpan
     ##    unless it is meant < XOR =
 
 
-    # tests  if one TimeSpan is the same as another (on the same TimeLine)
+    # tests  if one TimeSpan is the same as another (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return [Boolean] true if same as the other
     def == (other_time_span)
       ends_with?(other_time_span) && starts_with?(other_time_span)
     end
 
-    # tests  if one TimeSpan is not the same as another (on the same TimeLine)
+    # tests  if one TimeSpan is not the same as another (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return [Boolean] true if not same as the other
     def != (other_time_span)
       !end_with(other_time_span) || !starts_with(other_time_span)
     end
 
-    # tests  if one TimeSpan ends before another starts (on the same TimeLine)
+    # tests  if one TimeSpan ends before another starts (on the same TimeLine -- delegated to RelativeTime)
     # alias for '#ends_before_other_starts'
     # @param (see #starts_before? )
     # @return [Boolean] true if self ends before another starts
@@ -174,7 +179,7 @@ module TimeSpan
       ends_before_other_starts?(other_time_span)
     end
 
-    # tests  if one TimeSpan starts after another ends (on the same TimeLine)
+    # tests  if one TimeSpan starts after another ends (on the same TimeLine -- delegated to RelativeTime)
     # alias for '#starts_after_other_ends'
     # @param (see #starts_before? )
     # @return [Boolean] true if self starts after another ends
@@ -182,28 +187,28 @@ module TimeSpan
       starts_after_other_ends?(other_time_span)
     end
 
-    # tests  if one TimeSpan is contained within  another  (on the same TimeLine)
+    # tests  if one TimeSpan is contained within  another  (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self contained inside another
     def contained_fully_inside?(other_time_span)
       starts_after?(other_time_span) && ends_before?(other_time_span)
     end
 
-    # tests  if one TimeSpan is contained within another, possibly begining as or ends as another  (on the same TimeLine)
+    # tests  if one TimeSpan is contained within another, possibly begining as or ends as another  (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self contained inside another, including same endpoints
     def contained_inside?(other_time_span)
       starts_on_or_after?(other_time_span) && ends_on_or_before?(other_time_span)
     end
 
-    # tests  if one TimeSpan contains another  (on the same TimeLine)
+    # tests  if one TimeSpan contains another  (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self contains another
     def contains_fully?(other_time_span)
       starts_before?(other_time_span) && ends_after?(other_time_span)
     end
 
-    # tests  if one TimeSpan contains within  another  (on the same TimeLine)
+    # tests  if one TimeSpan contains within  another  (on the same TimeLine -- delegated to RelativeTime)
     # @param (see #starts_before? )
     # @return true if self contains another
     def contains?(other_time_span)
@@ -243,6 +248,21 @@ module TimeSpan
       @line = []
       @indices_of = {}
       @spans = []
+    end
+
+    # @raise [NotImplementedError] Cannot use base Ruby clone which can create illegal objects by gem rules.
+    def clone
+      raise NotImplementedError, "Cannot use base Ruby clone which can create illegal objects by gem rules."
+    end
+
+    # test for value equality.  Checking span trait is redundant -- can't have spans without times'
+    # @param [TimeSpan::TimeLine] TimeLine being compared to
+    # @return [Boolean]  true if name is equal and all other attributes are empty.
+    def == (other_timeline)
+        (object_id == other_timeline.object_id)  ||
+        (@name == other_timeline.name) &&
+            (@line.empty? && @indices_of.empty? && @spans.empty?) &&
+            (other_timeline.line.empty? && other_timeline.indices_of.empty? && other_timeline.spans.empty?)
     end
 
     # returns the TimeLine's name
@@ -402,6 +422,13 @@ module TimeSpan
        @time_line= tline
        @reference_to= ref
     end
+
+    # @raise [NotImplementedError] cannot do without much more work
+    def clone
+      raise NotImplementedError, "Cannot use base Ruby clone which can create illegal objects by gem rules."
+    end
+
+
 
     # @return [String] the string representation of referenced object
     def to_s

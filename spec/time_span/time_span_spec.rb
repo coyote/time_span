@@ -34,10 +34,35 @@ describe "TimeSpan" do
     timeline.spans <<  time_span
   end
 
-
   context "TimeSpan::TimeLine" do
 
     context "instance methods" do
+
+      context "cloning" do
+        it "should raise a NotImplementedError" do
+          lambda {
+             timeline.clone }.should raise_error NotImplementedError
+        end
+      end
+
+      context "equality comparator" do
+
+        ## two timelines are equal only if names are the same and they are empty.
+        it "should return == when all values are equal" do
+          timeline2 = TimeSpan::TimeLine.new "testing equality."
+          timeline3 = TimeSpan::TimeLine.new "testing equality."
+          timeline2.should == timeline3 #, "Not returning == when they are."
+        end
+
+        it "should return equal if all values are equal." do
+          timeline2 = TimeSpan::TimeLine.new "testing equality."
+          timeline3 = TimeSpan::TimeLine.new "testing equality."
+          relativet = TimeSpan::RelativeTime.new timeline2, "Some time point."
+          timeline2.append relativet
+          timeline2.should_not == timeline3
+        end
+
+      end
 
       context "statues" do
 
@@ -186,6 +211,11 @@ describe "TimeSpan" do
     context "instance methods" do
 
       context "creation" do
+
+        it "should raise an error when trying to clone." do
+          lambda {
+             time_span.clone }.should raise_error NotImplementedError
+        end
 
         it "should have a timeline associated" do
           timeline.spans.should_not be_empty
@@ -343,6 +373,11 @@ describe "TimeSpan" do
 
       let (:time) do
         TimeSpan::RelativeTime.new timeline, "time point"
+      end
+
+      it "raises an error when trying to clone" do
+        lambda {
+           time.clone }.should raise_error NotImplementedError
       end
 
       it "returns a string if using '.to_s'" do

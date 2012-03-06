@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    time_span (0.0.1.beta.01)
+    time_span (0.0.2)
 
 GEM
   remote: http://rubygems.org/

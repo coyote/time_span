@@ -73,10 +73,12 @@
 <p><em>TimeSpan</em>s are automatically attached to a TimeLine, but <em>RelativeTime</em>s are not.</p>
 
 <p><em>TimeLine</em>s are the only structure with even a moderate data complexity.  There is is a hash which keeps the relative position for each RelativeTime.  This structure allows more than one RelativeTime to be equal compared to other RelativeTimes.</p>
+
+<p>For now, clone is disallowed, it could create an object not obeying the rules, such as a RelativeTime pointing to TimeLine not its own.</p>
 </div></div>
     
     <div id="footer">
-  Generated on Fri Mar  2 13:34:25 2012 by 
+  Generated on Mon Mar  5 16:04:11 2012 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.5 (ruby-1.9.3).
 </div>

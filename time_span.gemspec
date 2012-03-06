@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ["craig.a.cook@gmail.com"]
   s.homepage    = "https://github.com/coyote/time_span"
   s.summary     = %q{Time Span}
-  s.description = %q{Time spans, including many comparators}
+  s.description = %q{Time spans, including many comparators. Abstract time ONLY.}
   s.license     = 'MIT'
 
   s.rubyforge_project = "time_span"
