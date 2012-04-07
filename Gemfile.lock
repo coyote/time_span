@@ -1,8 +1,7 @@
 PATH
   remote: .
   specs:
-    time_span (0.1.0)
-      rubygems-test
+    time_span (0.1.5)
 
 GEM
   remote: http://rubygems.org/
@@ -24,5 +23,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rspec
+  rspec (= 2.9.0)
+  rspec-expectations (= 2.9.0)
+  rubygems-test
   time_span!
