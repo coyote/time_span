@@ -18,3 +18,5 @@ Comparisons of any kind only make sense within a given TimeLine.
 *TimeLine*s are the only structure with even a moderate data complexity.  There is is a hash which keeps the relative position for each RelativeTime.  This structure allows more than one RelativeTime to be equal compared to other RelativeTimes.
 
 For now, clone is disallowed, it could create an object not obeying the rules, such as a RelativeTime pointing to TimeLine not its own.
+
+[![endorse](http://api.coderwall.com/coyote/endorsecount.png)](http://coderwall.com/coyote)
