@@ -19,4 +19,6 @@ Comparisons of any kind only make sense within a given TimeLine.
 
 For now, clone is disallowed, it could create an object not obeying the rules, such as a RelativeTime pointing to TimeLine not its own.
 
+If you would rather use standard Earth time, you might look into the [runt gem](http://runt.rubyforge.org/).
+
 [![endorse](http://api.coderwall.com/coyote/endorsecount.png)](http://coderwall.com/coyote)
