@@ -20,8 +20,8 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # dependencies
-  s.add_development_dependency "rspec-expectations", "2.9.0"
-  s.add_development_dependency "rspec", "2.9.0"
+
+  s.add_development_dependency "rspec"
   s.add_development_dependency  "rubygems-test"
 
 end
